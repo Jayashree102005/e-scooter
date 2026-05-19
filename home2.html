@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoGlide | Home 2 - Freedom on Two Wheels</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* THEME TOGGLE VARIABLES */
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    /* Smooth Image Loading */
+    img {
+      object-fit: cover;
+    }
+    
+    /* DARK MODE TEXT FIXES FOR HOME2 */
+    [data-theme="dark"] .text-black,
+    [data-theme="dark"] .text-zinc-900 {
+      color: #ffffff !important;
+    }
+    [data-theme="dark"] .text-zinc-600,
+    [data-theme="dark"] .text-zinc-500 {
+      color: #a1a1aa !important;
+    }
+    
+    [data-theme="dark"] a.bg-\[\#10B981\] {
+      color: #000000 !important;
+    }
+
+    /* Fix CTA Section in dark mode */
+    [data-theme="dark"] section.bg-\[\#10B981\] {
+      background-color: #10B981 !important;
+    }
+    [data-theme="dark"] section.bg-\[\#10B981\] .text-black {
+      color: #000000 !important;
+    }
+    [data-theme="dark"] section.bg-\[\#10B981\] .bg-black {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased bg-white text-zinc-900">
+  <!-- Navbar wrapper target -->
+  <div id="navbar"></div>
+
+  <!-- ==========================================
+       1. HERO BANNER SECTION (PURE BLACK)
+       ========================================== -->
+  <header class="relative bg-black pt-32 pb-24 overflow-hidden">
+    <!-- Vibrant glowing accent instead of grey -->
+    <div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-[#10B981] opacity-20 rounded-full blur-[120px] animate-pulse"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Text Narrative Block -->
+        <div class="lg:col-span-6 space-y-8 text-center lg:text-left">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#10B981]/10 text-[#10B981] text-xs font-bold rounded-full uppercase tracking-widest border border-[#10B981]/20">
+            <i class="bi bi-geo-alt-fill"></i> Urban Freedom Redefined
+          </span>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1]">
+            Freedom on <br />
+            <span class="text-[#10B981]">Two Wheels</span>
+          </h1>
+          <p class="text-zinc-400 text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Turn everyday travel into an experience with fast, electric scooter rentals built for modern city life.
+          </p>
+          <p class="text-sm text-zinc-400 max-w-xl mx-auto lg:mx-0 leading-relaxed border-l-2 border-[#10B981] pl-5">
+            Cruise through streets, discover local hotspots, and enjoy hassle-free travel with smart scooters powered by real-time technology and seamless ride controls.
+          </p>
+          
+          <!-- CTA Button Elements -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+            <a href="#" class="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#10B981] hover:bg-emerald-400 text-black font-black rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-300 transform hover:-translate-y-1">
+              Ride Now <i class="bi bi-lightning-charge-fill transition-transform duration-300 group-hover:scale-125"></i>
+            </a>
+            <a href="#destinations" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-zinc-800 hover:border-white text-white font-bold rounded-xl transition-all duration-300 transform hover:-translate-y-1">
+              Discover Routes
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Graphic: Real High-Quality E-Scooter Image -->
+        <div class="lg:col-span-6 relative mt-12 lg:mt-0 group cursor-pointer">
+          <div class="rounded-[2rem] overflow-hidden border border-zinc-800 relative shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
+            <img class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110" src="images/bike1.webp" alt="Electric Scooter in City">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+            
+            <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+              <div class="bg-black/80 backdrop-blur-md border border-zinc-700 p-4 rounded-xl">
+                <span class="block text-[10px] text-[#10B981] font-bold uppercase tracking-widest mb-1">Status</span>
+                <span class="text-white font-bold flex items-center gap-2"><i class="bi bi-unlock-fill"></i> Ready to Ride</span>
+              </div>
+              <div class="w-14 h-14 bg-[#10B981] rounded-full flex items-center justify-center text-black text-2xl shadow-lg transform transition group-hover:rotate-12">
+                <i class="bi bi-qr-code-scan"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Highlights Linear Matrix -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-20 border-t border-zinc-900 pt-10">
+        <div class="flex items-center gap-4 group cursor-default">
+          <div class="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-[#10B981] group-hover:bg-[#10B981] group-hover:text-black transition-colors duration-300"><i class="bi bi-tree text-xl"></i></div>
+          <div><h4 class="text-sm font-bold text-white">Zero Emission</h4><p class="text-[11px] text-zinc-500 font-medium uppercase tracking-wider">Clean Travel</p></div>
+        </div>
+        <div class="flex items-center gap-4 group cursor-default">
+          <div class="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-[#10B981] group-hover:bg-[#10B981] group-hover:text-black transition-colors duration-300"><i class="bi bi-qr-code text-xl"></i></div>
+          <div><h4 class="text-sm font-bold text-white">Smart Access</h4><p class="text-[11px] text-zinc-500 font-medium uppercase tracking-wider">Instant Unlock</p></div>
+        </div>
+        <div class="flex items-center gap-4 group cursor-default">
+          <div class="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-[#10B981] group-hover:bg-[#10B981] group-hover:text-black transition-colors duration-300"><i class="bi bi-lightning-fill text-xl"></i></div>
+          <div><h4 class="text-sm font-bold text-white">Instant Start</h4><p class="text-[11px] text-zinc-500 font-medium uppercase tracking-wider">Zero Delays</p></div>
+        </div>
+        <div class="flex items-center gap-4 group cursor-default">
+          <div class="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-[#10B981] group-hover:bg-[#10B981] group-hover:text-black transition-colors duration-300"><i class="bi bi-shield-check text-xl"></i></div>
+          <div><h4 class="text-sm font-bold text-white">Safe Parking</h4><p class="text-[11px] text-zinc-500 font-medium uppercase tracking-wider">Geo-fenced Zones</p></div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================
+       2. EXPERIENCE SECTION (PURE WHITE)
+       ========================================== -->
+  <section class="py-24 bg-white text-black">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Left Copy Header -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-sm font-black text-[#10B981] uppercase tracking-widest">Premium Mobility</span>
+          <h2 class="text-4xl sm:text-5xl font-black text-black tracking-tight leading-tight">
+            More Than a Ride — It’s an Experience
+          </h2>
+          <p class="text-zinc-600 text-base leading-relaxed">
+            From busy streets to scenic city corners, our e-scooters are designed to help riders travel smarter, faster, and more sustainably while enjoying every moment of the journey.
+          </p>
+        </div>
+
+        <!-- Right Functional Experience Points (Crisp Shadow Cards, NO GREY) -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
+          
+          <div class="p-8 bg-white rounded-2xl border border-zinc-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] hover:-translate-y-2 group">
+            <div class="w-12 h-12 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl font-bold mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-volume-mute"></i></div>
+            <h4 class="font-bold text-black text-lg mb-2">Smooth & Silent</h4>
+            <p class="text-sm text-zinc-500 leading-relaxed">High-performance electric motor architectures ensure quiet, vibration-free travel.</p>
+          </div>
+
+          <div class="p-8 bg-white rounded-2xl border border-zinc-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] hover:-translate-y-2 group">
+            <div class="w-12 h-12 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl font-bold mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-compass"></i></div>
+            <h4 class="font-bold text-black text-lg mb-2">Comfort Navigation</h4>
+            <p class="text-sm text-zinc-500 leading-relaxed">High-performance electric motor architectures ensure quiet, vibration-free travel.</p>
+          </div>
+
+          <div class="p-8 bg-white rounded-2xl border border-zinc-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] hover:-translate-y-2 group">
+            <div class="w-12 h-12 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl font-bold mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-hand-thumbs-up"></i></div>
+            <h4 class="font-bold text-black text-lg mb-2">Beginner-Friendly</h4>
+            <p class="text-sm text-zinc-500 leading-relaxed">High-performance electric motor architectures ensure quiet, vibration-free travel.</p>
+          </div>
+
+          <div class="p-8 bg-white rounded-2xl border border-zinc-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] hover:-translate-y-2 group">
+            <div class="w-12 h-12 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl font-bold mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-shield-check"></i></div>
+            <h4 class="font-bold text-black text-lg mb-2">Safety Integration</h4>
+            <p class="text-sm text-zinc-500 leading-relaxed">High-performance electric motor architectures ensure quiet, vibration-free travel.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       3. POPULAR DESTINATIONS SECTION (IMAGE GRID)
+       ========================================== -->
+  <section id="destinations" class="py-24 bg-black">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-sm font-black text-[#10B981] uppercase tracking-widest">Explore The City</span>
+        <h2 class="text-4xl sm:text-5xl font-black text-white tracking-tight">Popular City Spots</h2>
+        <p class="text-zinc-400 text-base">Use our scooters to effortlessly travel across the city’s most exciting destinations.</p>
+      </div>
+
+      <!-- Vibrant Image Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="relative h-64 rounded-2xl overflow-hidden group cursor-pointer border border-zinc-800">
+          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/img1.jpg" alt="Shopping Districts">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <h4 class="text-xl font-bold text-white mb-1">Shopping Districts</h4>
+            <span class="text-[#10B981] text-xs font-bold uppercase tracking-wider group-hover:translate-x-2 inline-block transition-transform"><i class="bi bi-arrow-right"></i> Navigate</span>
+          </div>
+        </div>
+
+        <div class="relative h-64 rounded-2xl overflow-hidden group cursor-pointer border border-zinc-800">
+          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/img2.webp" alt="Beach & Lake Routes">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <h4 class="text-xl font-bold text-white mb-1">Beach Routes</h4>
+            <span class="text-[#10B981] text-xs font-bold uppercase tracking-wider group-hover:translate-x-2 inline-block transition-transform"><i class="bi bi-arrow-right"></i> Navigate</span>
+          </div>
+        </div>
+
+        <div class="relative h-64 rounded-2xl overflow-hidden group cursor-pointer border border-zinc-800">
+          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/img3.avif" alt="Cafés & Food Streets">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <h4 class="text-xl font-bold text-white mb-1">Cafés & Food</h4>
+            <span class="text-[#10B981] text-xs font-bold uppercase tracking-wider group-hover:translate-x-2 inline-block transition-transform"><i class="bi bi-arrow-right"></i> Navigate</span>
+          </div>
+        </div>
+
+        <div class="relative h-64 rounded-2xl overflow-hidden group cursor-pointer border border-zinc-800">
+          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/img4.jpg" alt="Tech Parks">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <h4 class="text-xl font-bold text-white mb-1">Hill Stations</h4>
+            <span class="text-[#10B981] text-xs font-bold uppercase tracking-wider group-hover:translate-x-2 inline-block transition-transform"><i class="bi bi-arrow-right"></i> Navigate</span>
+          </div>
+        </div>
+
+        <div class="relative h-64 rounded-2xl overflow-hidden group cursor-pointer border border-zinc-800">
+          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/img5.jpg" alt="Tourist Attractions">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <h4 class="text-xl font-bold text-white mb-1">Adventures</h4>
+            <span class="text-[#10B981] text-xs font-bold uppercase tracking-wider group-hover:translate-x-2 inline-block transition-transform"><i class="bi bi-arrow-right"></i> Navigate</span>
+          </div>
+        </div>
+
+        <div class="relative h-64 rounded-2xl overflow-hidden group cursor-pointer border border-zinc-800">
+          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/img6.avif" alt="Nightlife Areas">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <h4 class="text-xl font-bold text-white mb-1">Nightlife Areas</h4>
+            <span class="text-[#10B981] text-xs font-bold uppercase tracking-wider group-hover:translate-x-2 inline-block transition-transform"><i class="bi bi-arrow-right"></i> Navigate</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-14 text-center">
+        <a href="#" class="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-[#10B981] hover:bg-[#10B981] text-white hover:text-black font-bold text-sm rounded-xl transition-all duration-300">
+          View Full Map <i class="bi bi-map-fill"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       4. APP FEATURES SECTION (PURE WHITE)
+       ========================================== -->
+  <section class="py-24 bg-white text-black">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-sm font-black text-[#10B981] uppercase tracking-widest">Smart App Tech</span>
+        <h2 class="text-4xl sm:text-5xl font-black text-black tracking-tight">Built with Smart Technology</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="p-8 bg-white border border-zinc-200 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all duration-300 transform hover:-translate-y-3 hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+          <div class="w-14 h-14 rounded-full bg-black text-[#10B981] flex items-center justify-center text-2xl font-bold mb-6 transition-transform duration-300 group-hover:rotate-12"><i class="bi bi-phone"></i></div>
+          <h3 class="font-bold text-black text-xl mb-3">Instant Ride Access</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Find nearby scooters and unlock them within seconds from your app.</p>
+        </div>
+
+        <div class="p-8 bg-white border border-zinc-200 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all duration-300 transform hover:-translate-y-3 hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+          <div class="w-14 h-14 rounded-full bg-black text-[#10B981] flex items-center justify-center text-2xl font-bold mb-6 transition-transform duration-300 group-hover:rotate-12"><i class="bi bi-cursor-fill"></i></div>
+          <h3 class="font-bold text-black text-xl mb-3">Smart Navigation</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Find nearby scooters and unlock them within seconds from your app.</p>
+        </div>
+
+        <div class="p-8 bg-white border border-zinc-200 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all duration-300 transform hover:-translate-y-3 hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+          <div class="w-14 h-14 rounded-full bg-black text-[#10B981] flex items-center justify-center text-2xl font-bold mb-6 transition-transform duration-300 group-hover:rotate-12"><i class="bi bi-receipt"></i></div>
+          <h3 class="font-bold text-black text-xl mb-3">Auto Ride Summary</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Find nearby scooters and unlock them within seconds from your app.</p>
+        </div>
+
+        <div class="p-8 bg-white border border-zinc-200 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all duration-300 transform hover:-translate-y-3 hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+          <div class="w-14 h-14 rounded-full bg-black text-[#10B981] flex items-center justify-center text-2xl font-bold mb-6 transition-transform duration-300 group-hover:rotate-12"><i class="bi bi-wallet2"></i></div>
+          <h3 class="font-bold text-black text-xl mb-3">Wallet & Rewards</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Find nearby scooters and unlock them within seconds from your app.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       5. SUSTAINABILITY SECTION (REAL E-BIKE IMAGE)
+       ========================================== -->
+  <section class="py-24 bg-black relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <!-- Big E-Bike Image Feature -->
+        <div class="relative h-[600px] rounded-[2rem] overflow-hidden shadow-2xl group">
+          <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="images/bike3.jpg" alt="E-Bike Sustainability">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-8 left-8 right-8">
+            <div class="flex items-center gap-4 bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-zinc-700 w-max">
+              <i class="bi bi-battery-charging text-3xl text-[#10B981]"></i>
+              <div>
+                <span class="block text-white font-bold text-lg">100% Electric</span>
+                <span class="text-xs text-[#10B981] uppercase tracking-widest font-bold">Zero Carbon Footprint</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side Stats Panel -->
+        <div class="space-y-8">
+          <div>
+            <span class="text-sm font-black text-[#10B981] uppercase tracking-widest">Green Future</span>
+            <h2 class="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight mt-3">Cleaner Cities Start with Smarter Transport</h2>
+            <p class="text-zinc-400 text-base leading-relaxed mt-4">
+              Every scooter ride helps reduce traffic congestion, fuel consumption, and carbon emissions while supporting eco-conscious urban travel networks.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="p-6 border border-zinc-800 rounded-2xl hover:border-[#10B981] transition-colors duration-300">
+              <span class="text-3xl text-[#10B981] block mb-3"><i class="bi bi-cloud-haze2"></i></span>
+              <h4 class="text-base font-bold text-white mb-2">Reduced Carbon</h4>
+              <p class="text-xs text-zinc-400">Lowers atmospheric emission loads on every transit cycle path.</p>
+            </div>
+            <div class="p-6 border border-zinc-800 rounded-2xl hover:border-[#10B981] transition-colors duration-300">
+              <span class="text-3xl text-[#10B981] block mb-3"><i class="bi bi-plugin"></i></span>
+              <h4 class="text-base font-bold text-white mb-2">Energy Efficient</h4>
+              <p class="text-xs text-zinc-400">Optimized power consumption metrics extend battery lifetimes.</p>
+            </div>
+            <div class="p-6 border border-zinc-800 rounded-2xl hover:border-[#10B981] transition-colors duration-300">
+              <span class="text-3xl text-[#10B981] block mb-3"><i class="bi bi-volume-down-fill"></i></span>
+              <h4 class="text-base font-bold text-white mb-2">Quiet Performance</h4>
+              <p class="text-xs text-zinc-400">Silent motors reduce structural sound disturbances inside cities.</p>
+            </div>
+            <div class="p-6 border border-zinc-800 rounded-2xl hover:border-[#10B981] transition-colors duration-300">
+              <span class="text-3xl text-[#10B981] block mb-3"><i class="bi bi-recycle"></i></span>
+              <h4 class="text-base font-bold text-white mb-2">Sustain Mobility</h4>
+              <p class="text-xs text-zinc-400">Clears micro commuter bottlenecks seamlessly without waste.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       6. COMMUNITY SECTION (PURE WHITE)
+       ========================================== -->
+  <section class="py-24 bg-white text-black">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-sm font-black text-[#10B981] uppercase tracking-widest">Shared Movement</span>
+        <h2 class="text-4xl sm:text-5xl font-black text-black tracking-tight">Join a Growing Rider Community</h2>
+        <p class="text-base text-zinc-500">Become part of a modern mobility movement trusted by commuters, tourists, students, and adventure seekers.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Side Features Grid -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="flex items-center gap-4 p-5 bg-white border border-zinc-200 shadow-sm rounded-2xl transition duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#10B981]/50 cursor-pointer">
+            <div class="w-12 h-12 bg-black text-[#10B981] rounded-full flex items-center justify-center text-xl"><i class="bi bi-tag-fill"></i></div>
+            <span class="text-sm font-bold text-black">Exclusive Member Discounts</span>
+          </div>
+          <div class="flex items-center gap-4 p-5 bg-white border border-zinc-200 shadow-sm rounded-2xl transition duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#10B981]/50 cursor-pointer">
+            <div class="w-12 h-12 bg-black text-[#10B981] rounded-full flex items-center justify-center text-xl"><i class="bi bi-calendar-event"></i></div>
+            <span class="text-sm font-bold text-black">Weekend Ride Events</span>
+          </div>
+          <div class="flex items-center gap-4 p-5 bg-white border border-zinc-200 shadow-sm rounded-2xl transition duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#10B981]/50 cursor-pointer">
+            <div class="w-12 h-12 bg-black text-[#10B981] rounded-full flex items-center justify-center text-xl"><i class="bi bi-people-fill"></i></div>
+            <span class="text-sm font-bold text-black">Group Tour Experiences</span>
+          </div>
+          <div class="flex items-center gap-4 p-5 bg-white border border-zinc-200 shadow-sm rounded-2xl transition duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#10B981]/50 cursor-pointer">
+            <div class="w-12 h-12 bg-black text-[#10B981] rounded-full flex items-center justify-center text-xl"><i class="bi bi-gift-fill"></i></div>
+            <span class="text-sm font-bold text-black">Loyalty Rewards Program</span>
+          </div>
+        </div>
+
+        <!-- Right Side Numeric Trackers -->
+        <div class="lg:col-span-5 bg-black text-white rounded-[2rem] p-10 shadow-2xl space-y-8 transform hover:scale-[1.02] transition-transform duration-500">
+          <div class="group cursor-default">
+            <div class="text-5xl font-black transition-colors group-hover:text-[#10B981]">15K+</div>
+            <div class="text-sm text-zinc-400 mt-2 font-bold uppercase tracking-wider">Community Members</div>
+          </div>
+          <div class="h-[1px] bg-zinc-800"></div>
+          <div class="group cursor-default">
+            <div class="text-5xl font-black transition-colors group-hover:text-[#10B981]">100K+</div>
+            <div class="text-sm text-zinc-400 mt-2 font-bold uppercase tracking-wider">Completed Rides</div>
+          </div>
+          <div class="h-[1px] bg-zinc-800"></div>
+          <div class="group cursor-default">
+            <div class="text-5xl font-black text-[#10B981] flex items-center gap-2">4.9<span class="text-2xl text-zinc-500">★</span></div>
+            <div class="text-sm text-zinc-400 mt-2 font-bold uppercase tracking-wider">User Satisfaction</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       7. DOWNLOAD APP & CTA SECTION (FULL EMERALD BACKGROUND)
+       ========================================== -->
+  <section class="py-24 bg-[#10B981] text-black overflow-hidden relative">
+    <div class="absolute inset-0 bg-[radial-gradient(black_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.05]"></div>
+    
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-8 relative z-10">
+      <h2 class="text-4xl sm:text-6xl font-black tracking-tight">Your Next Ride Starts Here</h2>
+      <p class="text-black/80 text-lg max-w-xl mx-auto font-medium">
+        Download the app, unlock a scooter, and explore the city with total freedom and convenience.
+      </p>
+      
+      <!-- Trigger Call Actions -->
+      <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#" class="inline-flex items-center gap-3 px-10 py-5 bg-black text-white font-black rounded-2xl text-sm uppercase tracking-widest transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+         Book First Ride
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target container slot element for footer inclusion -->
+  <div id="footer"></div>
+
+  <!-- Global JavaScript Configuration Engine -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

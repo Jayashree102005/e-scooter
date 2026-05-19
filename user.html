@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>GLIDE | Rider Dashboard - E-Scooter Rental</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: '#10B981',
+            brandDark: '#059669',
+            urban: '#1E293B',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'pulse-ring': 'pulse-ring 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'ride-pulse': 'pulse 2s infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { transition: background-color 0.2s ease; }
+    .dark .border, .dark .border-b, .dark .border-t, .dark .border-r, .dark .border-l { border-color: rgba(255, 255, 255, 0.05) !important; }
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #10B981; border-radius: 10px; }
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+      70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    .status-badge {
+      transition: all 0.2s ease;
+    }
+  </style>
+  <script>
+    if (localStorage.getItem('glideTheme') === 'dark') document.documentElement.classList.add('dark');
+  </script>
+</head>
+<body class="bg-slate-50 dark:bg-black text-slate-800 dark:text-slate-100 font-sans antialiased">
+
+<div class="flex h-screen overflow-hidden">
+  
+  <!-- SIDEBAR - User Focused -->
+  <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-72 bg-white dark:bg-[#0A0A0A] border-r border-slate-200 dark:border-slate-800 flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50 shadow-xl lg:shadow-none">
+    <div class="p-5 flex justify-between items-center border-b border-slate-100 dark:border-slate-800">
+      <div class="flex items-center gap-2">
+         <h1 class="title text-2xl text-slate-900 dark:text-white font-bold tracking-tight">
+    <a href="index.html">
+      ECO<span class="title text-[#10B981] dark:text-white font-bold">GLIDE</span>
+    </a>
+      </div>
+      <button id="closeSidebar" class="lg:hidden text-2xl text-slate-500"><i class="bi bi-x-lg"></i></button>
+    </div>
+
+    <div class="flex-1 overflow-y-auto custom-scrollbar px-4 py-6 space-y-7">
+      <nav class="space-y-1.5">
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-3 mb-2">Ride</p>
+        <a onclick="showDashboard('active-ride')" id="nav-active-ride" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"><i class="bi bi-ev-station-fill text-lg"></i> Active Ride</a>
+        <a onclick="showDashboard('nearby')" id="nav-nearby" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"><i class="bi bi-geo-alt-fill text-lg"></i> Find Scooters</a>
+        <a onclick="showDashboard('history')" id="nav-history" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"><i class="bi bi-clock-history text-lg"></i> Ride History</a>
+      </nav>
+      
+      <nav class="space-y-1.5">
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-3 mb-2">Wallet & Plan</p>
+        <a onclick="showDashboard('wallet')" id="nav-wallet" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"><i class="bi bi-wallet2 text-lg"></i> My Wallet</a>
+        <a onclick="showDashboard('membership')" id="nav-membership" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"><i class="bi bi-tag-fill text-lg"></i> Plans & Pricing</a>
+      </nav>
+
+      <nav class="space-y-1.5">
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-3 mb-2">Support</p>
+        <a onclick="showDashboard('support')" id="nav-support" class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"><i class="bi bi-headset text-lg"></i> Help Center</a>
+      </nav>
+    </div>
+
+    <div class="p-4 border-t border-slate-100 dark:border-slate-800 mt-auto">
+      <div class="flex gap-2 mb-3 lg:hidden">
+        <button class="themeToggleBtn flex-1 flex justify-center items-center gap-1 bg-slate-100 dark:bg-slate-800 text-xs font-bold py-2 rounded-xl"><i class="themeIcon bi bi-moon-stars-fill"></i> Theme</button>
+        <button class="rtlToggleBtn flex-1 flex justify-center items-center gap-1 bg-slate-100 dark:bg-slate-800 text-xs font-bold py-2 rounded-xl"><i class="bi bi-arrow-left-right"></i> RTL</button>
+      </div>
+      <a href="login.html" class="w-full bg-slate-100 dark:bg-slate-800 text-red-500 py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 hover:bg-red-50 dark:hover:bg-red-500/10 transition"><i class="bi bi-box-arrow-right"></i> Logout</a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="flex-1 flex flex-col overflow-hidden">
+    <!-- Header -->
+    <header class="bg-white/90 dark:bg-black/70 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 px-5 py-3 flex justify-between items-center sticky top-0 z-20">
+      <div class="flex items-center gap-3">
+        <button id="openSidebar" class="lg:hidden text-2xl text-brand"><i class="bi bi-list"></i></button>
+        <h2 id="page-title" class="font-bold text-slate-800 dark:text-white text-base tracking-wide">Active Ride</h2>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="hidden lg:flex items-center gap-2">
+          <button class="themeToggleBtn w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 transition"><i class="themeIcon bi bi-moon-stars-fill text-sm"></i></button>
+          <button class="rtlToggleBtn w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 transition"><i class="bi bi-arrow-left-right text-sm"></i></button>
+        </div>
+        <img src="images/team3.avif" class="w-8 h-8 rounded-full border border-brand/40 object-cover" alt="User Profile">
+      </div>
+    </header>
+
+    <main class="flex-1 overflow-y-auto custom-scrollbar p-5 space-y-6">
+      
+      <!-- SECTION: ACTIVE RIDE (live tracking / QR unlock) -->
+      <div id="section-active-ride" class="content-section space-y-6">
+        <div class="bg-gradient-to-br from-brand/5 to-white dark:from-brand/10 dark:to-[#111111] rounded-2xl border border-brand/20 p-6 shadow-sm">
+          <div class="flex flex-col lg:flex-row gap-6 items-center justify-between">
+            <div class="flex-1 text-center lg:text-left">
+              <div class="inline-flex items-center gap-1 bg-green-100 dark:bg-green-900/30 px-3 py-1 rounded-full text-xs font-bold text-brand mb-3"><i class="bi bi-dot"></i> Ready to roll</div>
+              <h3 class="text-2xl font-black dark:text-white">No active ride</h3>
+              <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Scan a QR code on any scooter to start your journey</p>
+              <button id="simulateScanBtn" class="mt-5 bg-brand text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg inline-flex items-center gap-2 hover:bg-brandDark transition"><i class="bi bi-qr-code-scan"></i> Simulate QR Scan</button>
+            </div>
+            <div class="w-32 h-32 bg-brand/10 rounded-full flex items-center justify-center animate-pulse-ring">
+              <i class="bi bi-upc-scan text-5xl text-brand"></i>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Live ride card (hidden by default, appears when ride active) -->
+        <div id="liveRideCard" class="hidden bg-white dark:bg-[#111111] rounded-2xl border dark:border-white/5 p-6 shadow-md transition-all">
+          <div class="flex justify-between items-start flex-wrap gap-3">
+            <div><p class="text-xs text-slate-400 uppercase font-bold">Currently riding</p>
+            <p class="text-2xl font-black dark:text-white" id="activeScooterId">Scooter #V27</p>
+            <div class="flex gap-3 mt-1"><span class="text-xs bg-brand/10 text-brand px-2 py-0.5 rounded-full"><i class="bi bi-battery-charging"></i> <span id="batteryLevel">87%</span></span><span class="text-xs text-slate-400">Zone: Downtown</span></div></div>
+            <div class="text-right"><p class="text-xs text-slate-400">Trip duration</p><p class="text-3xl font-black text-brand font-mono" id="rideTimer">00:00:00</p></div>
+          </div>
+          <div class="mt-5 grid grid-cols-2 gap-4">
+            <div><p class="text-[10px] text-slate-400">Distance (est.)</p><p class="font-bold text-lg" id="rideDistance">0.0 km</p></div>
+            <div><p class="text-[10px] text-slate-400">Current fare</p><p class="font-bold text-lg text-brand" id="currentFare">$0.00</p></div>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <button id="endRideBtn" class="flex-1 bg-red-500 text-white py-3 rounded-xl font-bold text-sm"><i class="bi bi-stop-circle"></i> End Ride</button>
+            <button class="flex-1 border border-slate-200 dark:border-slate-700 py-3 rounded-xl text-sm font-bold"><i class="bi bi-pause-circle"></i> Pause (max 5min)</button>
+          </div>
+          <div class="mt-3 text-center text-[10px] text-amber-500"><i class="bi bi-info-circle"></i> Geo-fence active: speed limit 25 km/h in green zones</div>
+        </div>
+        
+        <div class="bg-white dark:bg-[#111111] rounded-2xl p-5 border"><h4 class="font-bold mb-3">How to ride?</h4><div class="grid grid-cols-3 gap-3 text-center text-xs"><div><div class="bg-slate-100 dark:bg-slate-800 w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2"><i class="bi bi-qr-code text-brand text-xl"></i></div><p class="font-medium">1. Scan QR</p></div><div><div class="bg-slate-100 dark:bg-slate-800 w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2"><i class="bi bi-unlock-fill text-brand text-xl"></i></div><p class="font-medium">2. Unlock</p></div><div><div class="bg-slate-100 dark:bg-slate-800 w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2"><i class="bi bi-flag-fill text-brand text-xl"></i></div><p class="font-medium">3. Park safely</p></div></div></div>
+      </div>
+
+      <!-- SECTION: NEARBY SCOOTERS -->
+      <div id="section-nearby" class="content-section hidden space-y-6">
+        <div class="bg-white dark:bg-[#111111] rounded-2xl p-6 border">
+          <div class="flex justify-between items-center mb-4"><h3 class="font-black text-xl"><i class="bi bi-geo-alt-fill text-brand mr-2"></i> Nearby available scooters</h3><span class="text-xs bg-brand/10 text-brand px-3 py-1 rounded-full">Live locations</span></div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border-l-4 border-brand"><div><p class="font-bold">Maple Street & 5th Ave</p><p class="text-xs text-slate-400">Scooter #V42 • 94% battery • 0.2 mi</p></div><button class="reserve-btn bg-brand/10 text-brand px-4 py-2 rounded-lg text-xs font-bold hover:bg-brand hover:text-white transition" data-scooter="V42" data-battery="94">Reserve</button></div>
+            <div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-900 rounded-xl"><div><p class="font-bold">Central Square Station</p><p class="text-xs text-slate-400">Scooter #V18 • 87% battery • 0.1 mi</p></div><button class="reserve-btn bg-brand/10 text-brand px-4 py-2 rounded-lg text-xs font-bold hover:bg-brand hover:text-white transition" data-scooter="V18" data-battery="87">Reserve</button></div>
+            <div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-900 rounded-xl"><div><p class="font-bold">Waterfront Park</p><p class="text-xs text-slate-400">Scooter #V09 • 62% battery • 0.3 mi</p></div><button class="reserve-btn bg-brand/10 text-brand px-4 py-2 rounded-lg text-xs font-bold hover:bg-brand hover:text-white transition" data-scooter="V09" data-battery="62">Reserve</button></div>
+            <div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-900 rounded-xl"><div><p class="font-bold">Arts District Hub</p><p class="text-xs text-slate-400">Scooter #V33 • 78% battery • 0.4 mi</p></div><button class="reserve-btn bg-brand/10 text-brand px-4 py-2 rounded-lg text-xs font-bold hover:bg-brand hover:text-white transition" data-scooter="V33" data-battery="78">Reserve</button></div>
+          </div>
+          <div class="mt-6 p-3 bg-brand/5 rounded-xl text-center text-xs"><i class="bi bi-shield-check"></i> All scooters sanitized & safety checked</div>
+        </div>
+      </div>
+
+      <!-- SECTION: RIDE HISTORY -->
+      <div id="section-history" class="content-section hidden space-y-6">
+        <div class="bg-white dark:bg-[#111111] rounded-2xl border p-6">
+          <h3 class="font-black text-lg">Past Rides</h3>
+          <div class="space-y-4 mt-4" id="ridesHistoryContainer">
+            <div class="flex justify-between items-center border-b pb-3"><div><p class="font-bold">April 14, 2026 • 6:30 PM</p><p class="text-xs text-slate-400">Scooter V18 • 22 min • 3.2 km</p></div><span class="text-brand font-bold">$7.80</span></div>
+            <div class="flex justify-between items-center border-b pb-3"><div><p class="font-bold">April 12, 2026 • 8:15 AM</p><p class="text-xs text-slate-400">Scooter V09 • 15 min • 1.9 km</p></div><span class="text-brand font-bold">$5.20</span></div>
+            <div class="flex justify-between items-center pb-2"><div><p class="font-bold">April 10, 2026 • 7:45 PM</p><p class="text-xs text-slate-400">Scooter V42 • 31 min • 4.7 km</p></div><span class="text-brand font-bold">$11.40</span></div>
+          </div>
+          <button class="mt-6 w-full border border-slate-200 dark:border-slate-700 py-2.5 rounded-xl text-sm font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition">Load more</button>
+        </div>
+      </div>
+
+      <!-- SECTION: WALLET -->
+      <div id="section-wallet" class="content-section hidden space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white dark:bg-[#111111] p-6 rounded-2xl border">
+            <h4 class="font-bold flex gap-2"><i class="bi bi-wallet2 text-brand"></i> Digital Wallet</h4>
+            <div class="mt-3 bg-gradient-to-r from-brand/10 to-transparent p-5 rounded-xl"><p class="text-xs text-slate-400">Available balance</p><p class="text-4xl font-black" id="walletBalanceDisplay">$42.50</p></div>
+            <div class="mt-4 flex gap-2"><button class="flex-1 bg-brand text-white py-2 rounded-xl text-sm font-bold">+ Add $10</button><button class="flex-1 bg-brand text-white py-2 rounded-xl text-sm font-bold">+ Add $25</button></div>
+            <label class="flex items-center gap-2 mt-4 text-xs"><input type="checkbox" class="accent-brand"> Auto-recharge when below $5</label>
+          </div>
+          <div class="bg-white dark:bg-[#111111] p-6 rounded-2xl border">
+            <h4 class="font-bold">Payment Methods</h4>
+            <div class="mt-3 space-y-3"><div class="flex items-center justify-between border-b pb-2"><span><i class="bi bi-credit-card"></i> Visa ending in 4242</span><span class="text-green-500 text-xs">Default</span></div><div class="flex items-center justify-between"><span><i class="bi bi-apple"></i> Apple Pay</span><button class="text-brand text-xs">Set default</button></div></div>
+            <button class="w-full mt-5 border border-dashed border-slate-300 py-2 rounded-xl text-sm"><i class="bi bi-plus"></i> Add new card</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: MEMBERSHIP & PRICING -->
+      <div id="section-membership" class="content-section hidden space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div class="bg-white dark:bg-[#111111] rounded-2xl p-5 border text-center"><i class="bi bi-lightning-charge text-3xl text-brand"></i><h3 class="font-black mt-2">Flex Pay</h3><p class="text-2xl font-black text-brand">$0.30<span class="text-sm">/min</span></p><p class="text-xs mt-1">+$1 unlock fee</p><button class="mt-4 border border-brand text-brand px-4 py-2 rounded-xl w-full text-sm font-bold">Current Plan</button></div>
+          <div class="bg-brand/5 rounded-2xl p-5 border border-brand/30 text-center relative"><div class="absolute -top-2 right-4 bg-brand text-white text-[10px] px-2 py-0.5 rounded-full">Popular</div><i class="bi bi-infinity text-3xl text-brand"></i><h3 class="font-black mt-2">Day Pass</h3><p class="text-2xl font-black text-brand">$19<span class="text-sm">/day</span></p><p class="text-xs">Unlimited 90-min rides, 24h</p><button class="mt-4 bg-brand text-white px-4 py-2 rounded-xl w-full text-sm font-bold">Upgrade</button></div>
+          <div class="bg-white dark:bg-[#111111] rounded-2xl p-5 border text-center"><i class="bi bi-star-fill text-3xl text-amber-400"></i><h3 class="font-black mt-2">Monthly Pass</h3><p class="text-2xl font-black text-brand">$49<span class="text-sm">/mo</span></p><p class="text-xs">500 min included, 20% off overage</p><button class="mt-4 border border-brand text-brand px-4 py-2 rounded-xl w-full text-sm font-bold">Learn More</button></div>
+        </div>
+      </div>
+
+      <!-- SECTION: SUPPORT -->
+      <div id="section-support" class="content-section hidden space-y-6">
+        <div class="bg-white dark:bg-[#111111] rounded-2xl p-6 border"><h3 class="font-black text-xl">Help & Support</h3><div class="space-y-3 mt-4"><div class="flex gap-3 items-center p-3 bg-slate-50 dark:bg-slate-900 rounded-xl"><i class="bi bi-chat-dots text-brand text-xl"></i><div><p class="font-bold">Live Chat</p><p class="text-xs text-slate-400">Available 9AM - 8PM</p></div><button class="ml-auto text-brand text-sm">Start</button></div><div class="flex gap-3 items-center p-3 bg-slate-50 dark:bg-slate-900 rounded-xl"><i class="bi bi-telephone text-brand text-xl"></i><div><p class="font-bold">Emergency & Support</p><p class="text-xs text-slate-400">+1 (555) 832-4321</p></div></div><div class="flex gap-3 items-center p-3 bg-slate-50 dark:bg-slate-900 rounded-xl"><i class="bi bi-question-circle text-brand text-xl"></i><div><p class="font-bold">FAQ / Geo-fence rules</p></div></div></div></div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script>
+  // Simulated ride state
+  let activeRide = false;
+  let rideInterval = null;
+  let rideSeconds = 0;
+  let currentScooter = null;
+  let currentBattery = 87;
+  const RATE_PER_MIN = 0.30;
+  const UNLOCK_FEE = 1.0;
+  let unlockFeeApplied = false;
+
+  const rideTimerEl = document.getElementById('rideTimer');
+  const rideDistanceEl = document.getElementById('rideDistance');
+  const currentFareEl = document.getElementById('currentFare');
+  const liveRideCard = document.getElementById('liveRideCard');
+  const activeScooterIdSpan = document.getElementById('activeScooterId');
+  const batteryLevelSpan = document.getElementById('batteryLevel');
+  const walletBalanceHeader = document.getElementById('wallet-balance-header');
+  const walletBalanceDisplay = document.getElementById('walletBalanceDisplay');
+
+  let walletBalance = 42.50;
+
+  function updateWalletUI() {
+    if(walletBalanceHeader) walletBalanceHeader.innerText = walletBalance.toFixed(2);
+    if(walletBalanceDisplay) walletBalanceDisplay.innerText = `$${walletBalance.toFixed(2)}`;
+  }
+
+  function stopRideTimer() {
+    if(rideInterval) { clearInterval(rideInterval); rideInterval = null; }
+  }
+
+  function startRideTimer() {
+    if(rideInterval) stopRideTimer();
+    rideInterval = setInterval(() => {
+      rideSeconds++;
+      const mins = rideSeconds / 60;
+      const fare = UNLOCK_FEE + (mins * RATE_PER_MIN);
+      const distanceKm = (rideSeconds / 60) * 0.15; // avg 9km/h -> 0.15km/min
+      if(rideTimerEl) rideTimerEl.innerText = new Date(rideSeconds * 1000).toISOString().substr(11, 8);
+      if(rideDistanceEl) rideDistanceEl.innerText = distanceKm.toFixed(1) + " km";
+      if(currentFareEl) currentFareEl.innerText = `$${fare.toFixed(2)}`;
+    }, 1000);
+  }
+
+  function resetRideUI() {
+    activeRide = false;
+    stopRideTimer();
+    rideSeconds = 0;
+    unlockFeeApplied = false;
+    liveRideCard.classList.add('hidden');
+    if(rideTimerEl) rideTimerEl.innerText = "00:00:00";
+    if(rideDistanceEl) rideDistanceEl.innerText = "0.0 km";
+    if(currentFareEl) currentFareEl.innerText = "$0.00";
+  }
+
+  function endCurrentRide() {
+    if(!activeRide) return;
+    const mins = rideSeconds / 60;
+    const finalFare = UNLOCK_FEE + (mins * RATE_PER_MIN);
+    if(walletBalance >= finalFare) {
+      walletBalance -= finalFare;
+      updateWalletUI();
+      // add to history
+      const historyContainer = document.getElementById('ridesHistoryContainer');
+      const now = new Date();
+      const dateStr = now.toLocaleDateString() + " • " + now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+      const newHistoryEntry = document.createElement('div');
+      newHistoryEntry.className = "flex justify-between items-center border-b pb-3";
+      newHistoryEntry.innerHTML = `<div><p class="font-bold">${dateStr}</p><p class="text-xs text-slate-400">Scooter ${currentScooter || 'V27'} • ${Math.floor(mins)} min • ${(mins*0.15).toFixed(1)} km</p></div><span class="text-brand font-bold">$${finalFare.toFixed(2)}</span>`;
+      if(historyContainer && historyContainer.firstChild) historyContainer.insertBefore(newHistoryEntry, historyContainer.firstChild);
+      else if(historyContainer) historyContainer.prepend(newHistoryEntry);
+      alert(`Ride ended! Total: $${finalFare.toFixed(2)}. Wallet balance: $${walletBalance.toFixed(2)}`);
+    } else {
+      alert(`Insufficient balance! Fare: $${finalFare.toFixed(2)}. Please top-up.`);
+    }
+    resetRideUI();
+    currentScooter = null;
+    showDashboard('active-ride');
+  }
+
+  function startRide(scooterId, battery) {
+    if(activeRide) { alert("Please end current ride first"); return; }
+    activeRide = true;
+    currentScooter = scooterId;
+    currentBattery = battery;
+    unlockFeeApplied = true;
+    rideSeconds = 0;
+    if(activeScooterIdSpan) activeScooterIdSpan.innerText = `Scooter #${scooterId}`;
+    if(batteryLevelSpan) batteryLevelSpan.innerText = `${battery}%`;
+    liveRideCard.classList.remove('hidden');
+    startRideTimer();
+    // simulate wallet check for unlock fee later, but we show fare inclusive.
+    showDashboard('active-ride');
+  }
+
+  document.getElementById('simulateScanBtn')?.addEventListener('click', () => {
+    if(activeRide) { alert("Already in a ride. End current ride first."); return; }
+    startRide('V27', 94);
+  });
+  document.getElementById('endRideBtn')?.addEventListener('click', () => { if(activeRide) endCurrentRide(); else alert("No active ride"); });
+
+  document.querySelectorAll('.reserve-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      if(activeRide) { alert("Complete current ride before reserving."); return; }
+      const scooter = btn.getAttribute('data-scooter');
+      const battery = btn.getAttribute('data-battery');
+      if(confirm(`Reserve scooter #${scooter}? You can scan QR to unlock within 5 min.`)) startRide(scooter, battery);
+    });
+  });
+
+  const sectionsMap = {
+    'active-ride': 'section-active-ride', 'nearby': 'section-nearby', 'history': 'section-history',
+    'wallet': 'section-wallet', 'membership': 'section-membership', 'support': 'section-support'
+  };
+  function showDashboard(sectionId) {
+    Object.values(sectionsMap).forEach(id => document.getElementById(id)?.classList.add('hidden'));
+    const target = document.getElementById(sectionsMap[sectionId]);
+    if(target) target.classList.remove('hidden');
+    const titles = { 'active-ride': 'Active Ride', 'nearby': 'Find Scooters', 'history': 'Ride History', 'wallet': 'My Wallet', 'membership': 'Plans & Pricing', 'support': 'Help Center' };
+    document.getElementById('page-title').innerText = titles[sectionId];
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('bg-brand/10', 'text-brand', 'font-semibold'));
+    const activeLink = document.getElementById('nav-' + sectionId);
+    if(activeLink) activeLink.classList.add('bg-brand/10', 'text-brand', 'font-semibold');
+    if (window.innerWidth < 1024) closeSidebar();
+  }
+
+  const sidebar = document.getElementById("sidebar"), overlay = document.getElementById("overlay");
+  function closeSidebar() { sidebar.classList.add("-translate-x-full"); if(overlay) overlay.classList.add("hidden"); }
+  document.getElementById("openSidebar")?.addEventListener("click", () => { sidebar.classList.remove("-translate-x-full"); if(overlay) overlay.classList.remove("hidden"); });
+  document.getElementById("closeSidebar")?.addEventListener("click", closeSidebar);
+
+  document.querySelectorAll(".themeToggleBtn").forEach(btn => btn.onclick = () => { document.documentElement.classList.toggle("dark"); const isDark = document.documentElement.classList.contains("dark"); localStorage.setItem('glideTheme', isDark ? 'dark' : 'light'); document.querySelectorAll(".themeIcon").forEach(icon => icon.className = isDark ? "themeIcon bi bi-sun-fill" : "themeIcon bi bi-moon-stars-fill"); });
+  document.querySelectorAll(".rtlToggleBtn").forEach(btn => btn.onclick = () => { document.documentElement.dir = document.documentElement.dir === "rtl" ? "ltr" : "rtl"; });
+  const isDarkLoaded = document.documentElement.classList.contains("dark");
+  document.querySelectorAll(".themeIcon").forEach(icon => icon.className = isDarkLoaded ? "themeIcon bi bi-sun-fill" : "themeIcon bi bi-moon-stars-fill");
+  updateWalletUI();
+  showDashboard('active-ride');
+</script>
+</body>
+</html>

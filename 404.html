@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 | Page Not Found - GLIDE Scooters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: '#10B981',
+            brandDark: '#059669',
+            urban: '#1E293B',
+            asphalt: '#0F172A',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 3s ease-in-out infinite',
+            'pulse-ring': 'pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'slide-up': 'slideUp 0.5s ease-out',
+            'drift': 'drift 8s ease-in-out infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(3deg); }
+    }
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+      70% { box-shadow: 0 0 0 20px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes drift {
+      0% { transform: translateX(0px) rotate(0deg); }
+      50% { transform: translateX(25px) rotate(5deg); }
+      100% { transform: translateX(0px) rotate(0deg); }
+    }
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #10B981; border-radius: 10px; }
+    .glitch-text {
+      text-shadow: -2px 0 rgba(16, 185, 129, 0.3), 2px 0 rgba(255, 59, 48, 0.3);
+      animation: glitch 0.3s infinite;
+    }
+    @keyframes glitch {
+      0% { text-shadow: -2px 0 #10B981, 2px 0 #ff3b30; }
+      50% { text-shadow: 2px 0 #10B981, -2px 0 #ff3b30; }
+      100% { text-shadow: -2px 0 #10B981, 2px 0 #ff3b30; }
+    }
+    .scooter-trail {
+      background: linear-gradient(90deg, transparent, #10B98120, transparent);
+      animation: trail 2s linear infinite;
+    }
+    @keyframes trail {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(200%); }
+    }
+  </style>
+  <script>
+    if (localStorage.getItem('glideTheme') === 'dark') document.documentElement.classList.add('dark');
+  </script>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-black dark:via-[#0A0A0A] dark:to-[#0F0F0F] font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Animated Background Pattern -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none opacity-5 dark:opacity-10">
+    <div class="absolute top-20 left-10 w-64 h-64 rounded-full bg-brand blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-brand blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-brand/20 blur-3xl"></div>
+  </div>
+
+  <!-- Main 404 Content -->
+  <div class="relative z-10 flex-1 flex items-center justify-center px-4 py-12">
+    <div class="max-w-4xl w-full mx-auto text-center animate-[slideUp_0.6s_ease-out]">
+      
+      <!-- Animated Scooter Icon -->
+      <div class="relative inline-block mb-6">
+        <div class="absolute -top-8 -right-8 w-20 h-20 bg-brand/20 rounded-full animate-pulse-ring"></div>
+        <div class="relative inline-block animate-float">
+          <div class="relative">
+            <i class="bi bi-scooter text-[120px] sm:text-[160px] text-brand drop-shadow-2xl"></i>
+            <!-- Speed lines -->
+            <div class="absolute -right-12 top-1/2 -translate-y-1/2 flex gap-1">
+              <div class="w-3 h-3 bg-brand rounded-full animate-ping" style="animation-delay: 0s"></div>
+              <div class="w-3 h-3 bg-brand rounded-full animate-ping" style="animation-delay: 0.2s"></div>
+              <div class="w-3 h-3 bg-brand rounded-full animate-ping" style="animation-delay: 0.4s"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 404 Glitch Text -->
+      <h1 class="text-[120px] sm:text-[180px] font-black leading-none tracking-tighter mb-2">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand to-brandDark dark:from-brand dark:to-brandDark glitch-text">404</span>
+      </h1>
+      
+      <!-- Error Message -->
+      <div class="space-y-4 mb-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white">
+          Oops! This route doesn't exist
+        </h2>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a href="index.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand hover:bg-brandDark text-white rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          <i class="bi bi-house-door-fill"></i>
+          Back to Home
+        </a>
+      </div>
+
+
+
+  <script>
+    // Theme Toggle for 404 page
+    const themeBtn = document.getElementById('themeToggle404');
+    const themeIcon = document.getElementById('themeIcon404');
+    const rtlBtn = document.getElementById('rtlToggle404');
+    
+    function updateThemeIcon() {
+      const isDark = document.documentElement.classList.contains('dark');
+      themeIcon.className = isDark ? 'bi bi-sun-fill text-xs text-amber-400' : 'bi bi-moon-stars-fill text-xs text-slate-600';
+    }
+    
+    if (themeBtn) {
+      themeBtn.onclick = () => {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        localStorage.setItem('glideTheme', isDark ? 'dark' : 'light');
+        updateThemeIcon();
+      };
+    }
+    
+    if (rtlBtn) {
+      rtlBtn.onclick = () => {
+        document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';
+      };
+    }
+    
+    updateThemeIcon();
+    
+    // Fun: Console message
+    console.log("%c🚀 404 - Looks like you took a scenic detour! Want to rent a scooter? Head back to dashboard.", "color: #10B981; font-size: 14px; font-weight: bold;");
+    
+    // Optional: Dynamic background scooter emoji trail effect
+    const createFloatingScooter = () => {
+      const scooter = document.createElement('div');
+      scooter.innerHTML = '🛴';
+      scooter.style.position = 'fixed';
+      scooter.style.bottom = '10px';
+      scooter.style.right = '-50px';
+      scooter.style.fontSize = '24px';
+      scooter.style.opacity = '0.3';
+      scooter.style.pointerEvents = 'none';
+      scooter.style.zIndex = '0';
+      scooter.style.animation = 'drift 12s linear forwards';
+      document.body.appendChild(scooter);
+      setTimeout(() => scooter.remove(), 12000);
+    };
+    // Uncomment for fun floating effect (optional)
+    // setInterval(createFloatingScooter, 8000);
+  </script>
+</body>
+</html>

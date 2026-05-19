@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoGlide | Home 2 - Freedom on Two Wheels</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* THEME TOGGLE VARIABLES */
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    /* Smooth Image Loading */
+    img {
+      object-fit: cover;
+    }
+    
+    /* DARK MODE TEXT FIXES FOR HOME2 */
+    [data-theme="dark"] .text-black,
+    [data-theme="dark"] .text-zinc-900 {
+      color: #ffffff !important;
+    }
+    [data-theme="dark"] .text-zinc-600,
+    [data-theme="dark"] .text-zinc-500 {
+      color: #a1a1aa !important;
+    }
+    
+    [data-theme="dark"] a.bg-\[\#10B981\] {
+      color: #000000 !important;
+    }
+
+    /* Fix CTA Section in dark mode */
+    [data-theme="dark"] section.bg-\[\#10B981\] {
+      background-color: #10B981 !important;
+    }
+    [data-theme="dark"] section.bg-\[\#10B981\] .text-black {
+      color: #000000 !important;
+    }
+    [data-theme="dark"] section.bg-\[\#10B981\] .bg-black {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased bg-white text-zinc-900">
+  <!-- Navbar wrapper target -->
+  <div id="navbar"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero-gradient pt-32 pb-24 overflow-hidden border-b border-zinc-100">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- LEFT CONTENT -->
+        <div class="space-y-8 text-center lg:text-left">
+
+          <div class="space-y-4">
+            <span class="text-[#10B981] uppercase tracking-[0.3em] text-sm font-bold">
+              Premium EV Collection
+            </span>
+
+            <h1 class="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight">
+              Explore Our
+              <span class="text-[#10B981]">Rental Fleet</span>
+            </h1>
+
+            <p class="text-zinc-500 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+              Discover premium electric scooters built for smart commuting,
+              eco-friendly city travel, and unforgettable urban ride experiences.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+
+            <div class="bg-white border border-zinc-200 px-5 py-4 rounded-2xl shadow-sm hover:-translate-y-3 transition">
+              <h4 class="font-black text-2xl">250+</h4>
+              <p class="text-zinc-500 text-sm">Smart Scooters</p>
+            </div>
+
+            <div class="bg-white border border-zinc-200 px-5 py-4 rounded-2xl shadow-sm hover:-translate-y-3 transition">
+              <h4 class="font-black text-2xl">24/7</h4>
+              <p class="text-zinc-500 text-sm">Rental Access</p>
+            </div>
+
+            <div class="bg-white border border-zinc-200 px-5 py-4 rounded-2xl shadow-sm hover:-translate-y-3 transition">
+              <h4 class="font-black text-2xl">100%</h4>
+              <p class="text-zinc-500 text-sm">Electric Mobility</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="relative">
+          <div class="absolute -top-10 -right-10 w-40 h-40 bg-[#10B981]/10 rounded-full blur-3xl"></div>
+
+          <div class="rounded-[2.5rem] overflow-hidden border border-zinc-200 shadow-2xl relative">
+            <img
+              src="images/imgs2.webp"
+              class="w-full h-[550px] object-cover"
+              alt="EV Scooter"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FLEET SECTION -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- SECTION TITLE -->
+      <div class="text-center max-w-3xl mx-auto mb-20">
+
+        <span class="text-[#10B981] uppercase tracking-[0.3em] text-sm font-bold">
+          Scooter Collection
+        </span>
+
+        <h2 class="text-4xl md:text-5xl font-black mt-4 mb-6">
+          Premium Rental EV Scooters
+        </h2>
+
+        <p class="text-zinc-500 text-lg leading-relaxed">
+          Browse our curated collection of modern electric scooters designed for
+          comfort, performance, and seamless urban mobility.
+        </p>
+
+      </div>
+
+      <!-- GRID -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- CARD 1 -->
+        <div class="fleet-card bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden flex flex-col transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+
+          <img
+            src="images/bike1.webp"
+            class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+
+          <div class="p-8 flex-grow">
+
+            <span class="text-[#10B981] uppercase tracking-widest text-xs font-bold">
+              Urban Commuter
+            </span>
+
+            <h3 class="text-2xl font-black mt-3 mb-5">
+              Smart City Scooter X1
+            </h3>
+
+            <ul class="space-y-3 text-sm text-zinc-600">
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Lightweight Handling</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Smart QR Unlock</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> 45KM Battery Range</li>
+            </ul>
+
+          </div>
+
+          <div class="p-8 border-t border-zinc-100">
+            <div class="flex items-end justify-between mb-5">
+              <h4 class="text-3xl font-black">₹99</h4>
+              <span class="text-zinc-400 text-sm">/ 30 min</span>
+            </div>
+
+            <button class="w-full bg-zinc-900 text-white font-bold py-3 rounded-xl hover:bg-[#10B981] transition">
+              Rent Now
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="fleet-card bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden flex flex-col transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+
+          <img
+            src="images/imgs1.png"
+            class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+
+          <div class="p-8 flex-grow">
+
+            <span class="text-[#10B981] uppercase tracking-widest text-xs font-bold">
+              Premium Tour
+            </span>
+
+            <h3 class="text-2xl font-black mt-3 mb-5">
+              Explorer Ride Pro
+            </h3>
+
+            <ul class="space-y-3 text-sm text-zinc-600">
+              <li><i class="bi bi-check2 text-[#10B981]"></i> GPS Navigation</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Extended Battery</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Smooth Suspension</li>
+            </ul>
+
+          </div>
+
+          <div class="p-8 border-t border-zinc-100">
+            <div class="flex items-end justify-between mb-5">
+              <h4 class="text-3xl font-black">₹149</h4>
+              <span class="text-zinc-400 text-sm">/ 30 min</span>
+            </div>
+
+            <button class="w-full bg-zinc-900 text-white font-bold py-3 rounded-xl hover:bg-[#10B981] transition">
+              Rent Now
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="fleet-card bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden flex flex-col transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+
+          <img
+            src="images/imgs3.png"
+            class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+
+          <div class="p-8 flex-grow">
+
+            <span class="text-[#10B981] uppercase tracking-widest text-xs font-bold">
+              Performance
+            </span>
+
+            <h3 class="text-2xl font-black mt-3 mb-5">
+              Velocity Max EV
+            </h3>
+
+            <ul class="space-y-3 text-sm text-zinc-600">
+              <li><i class="bi bi-check2 text-[#10B981]"></i> High-Speed Mode</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Fast Charging</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Smart Monitoring</li>
+            </ul>
+
+          </div>
+
+          <div class="p-8 border-t border-zinc-100">
+            <div class="flex items-end justify-between mb-5">
+              <h4 class="text-3xl font-black">₹199</h4>
+              <span class="text-zinc-400 text-sm">/ hour</span>
+            </div>
+
+            <button class="w-full bg-zinc-900 text-white font-bold py-3 rounded-xl hover:bg-[#10B981] transition">
+              Rent Now
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="fleet-card bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden flex flex-col transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+
+          <img
+            src="images/imgs2.webp"
+            class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+
+          <div class="p-8 flex-grow">
+
+            <span class="text-[#10B981] uppercase tracking-widest text-xs font-bold">
+              Budget Friendly
+            </span>
+
+            <h3 class="text-2xl font-black mt-3 mb-5">
+              EcoRide Lite
+            </h3>
+
+            <ul class="space-y-3 text-sm text-zinc-600">
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Compact Design</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Easy Handling</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Energy Efficient</li>
+            </ul>
+
+          </div>
+
+          <div class="p-8 border-t border-zinc-100">
+            <div class="flex items-end justify-between mb-5">
+              <h4 class="text-3xl font-black">₹79</h4>
+              <span class="text-zinc-400 text-sm">/ 30 min</span>
+            </div>
+
+            <button class="w-full bg-zinc-900 text-white font-bold py-3 rounded-xl hover:bg-[#10B981] transition">
+              Rent Now
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="fleet-card bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden flex flex-col transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+
+          <img
+            src="images/bike3.jpg"
+            class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+
+          <div class="p-8 flex-grow">
+
+            <span class="text-[#10B981] uppercase tracking-widest text-xs font-bold">
+              Luxury Elite
+            </span>
+
+            <h3 class="text-2xl font-black mt-3 mb-5">
+              UrbanCruise Elite
+            </h3>
+
+            <ul class="space-y-3 text-sm text-zinc-600">
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Digital Dashboard</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Premium Build</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Long Battery Range</li>
+            </ul>
+
+          </div>
+
+          <div class="p-8 border-t border-zinc-100">
+            <div class="flex items-end justify-between mb-5">
+              <h4 class="text-3xl font-black">₹249</h4>
+              <span class="text-zinc-400 text-sm">/ hour</span>
+            </div>
+
+            <button class="w-full bg-zinc-900 text-white font-bold py-3 rounded-xl hover:bg-[#10B981] transition">
+              Rent Now
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="fleet-card bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden flex flex-col transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+
+          <img
+            src="images/bike4.webp"
+            class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+
+          <div class="p-8 flex-grow">
+
+            <span class="text-[#10B981] uppercase tracking-widest text-xs font-bold">
+              Night Edition
+            </span>
+
+            <h3 class="text-2xl font-black mt-3 mb-5">
+              Night Rider EV
+            </h3>
+
+            <ul class="space-y-3 text-sm text-zinc-600">
+              <li><i class="bi bi-check2 text-[#10B981]"></i> LED Lighting</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Night Navigation</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> GPS Tracking</li>
+            </ul>
+
+          </div>
+
+          <div class="p-8 border-t border-zinc-100">
+            <div class="flex items-end justify-between mb-5">
+              <h4 class="text-3xl font-black">₹179</h4>
+              <span class="text-zinc-400 text-sm">/ hour</span>
+            </div>
+
+            <button class="w-full bg-zinc-900 text-white font-bold py-3 rounded-xl hover:bg-[#10B981] transition">
+              Rent Now
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="fleet-card bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden flex flex-col transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+
+          <img
+            src="images/bike5.jpeg"
+            class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+
+          <div class="p-8 flex-grow">
+
+            <span class="text-[#10B981] uppercase tracking-widest text-xs font-bold">
+              Metro Series
+            </span>
+
+            <h3 class="text-2xl font-black mt-3 mb-5">
+              Metro Glide S
+            </h3>
+
+            <ul class="space-y-3 text-sm text-zinc-600">
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Fast Charging</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Smart Analytics</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Urban Comfort</li>
+            </ul>
+
+          </div>
+
+          <div class="p-8 border-t border-zinc-100">
+            <div class="flex items-end justify-between mb-5">
+              <h4 class="text-3xl font-black">₹129</h4>
+              <span class="text-zinc-400 text-sm">/ hour</span>
+            </div>
+
+            <button class="w-full bg-zinc-900 text-white font-bold py-3 rounded-xl hover:bg-[#10B981] transition">
+              Rent Now
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="fleet-card bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden flex flex-col transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+
+          <img
+            src="images/bike6.png"
+            class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+
+          <div class="p-8 flex-grow">
+
+            <span class="text-[#10B981] uppercase tracking-widest text-xs font-bold">
+              Adventure Ride
+            </span>
+
+            <h3 class="text-2xl font-black mt-3 mb-5">
+              Adventure Trek EV
+            </h3>
+
+            <ul class="space-y-3 text-sm text-zinc-600">
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Off-Road Tires</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Long Range Ride</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Strong Suspension</li>
+            </ul>
+
+          </div>
+
+          <div class="p-8 border-t border-zinc-100">
+            <div class="flex items-end justify-between mb-5">
+              <h4 class="text-3xl font-black">₹299</h4>
+              <span class="text-zinc-400 text-sm">/ hour</span>
+            </div>
+
+            <button class="w-full bg-zinc-900 text-white font-bold py-3 rounded-xl hover:bg-[#10B981] transition">
+              Rent Now
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 9 -->
+        <div class="fleet-card bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden flex flex-col transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+
+          <img
+            src="images/bike9.jpg"
+            class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+
+          <div class="p-8 flex-grow">
+
+            <span class="text-[#10B981] uppercase tracking-widest text-xs font-bold">
+              Smart Mobility
+            </span>
+
+            <h3 class="text-2xl font-black mt-3 mb-5">
+              EcoMotion Prime
+            </h3>
+
+            <ul class="space-y-3 text-sm text-zinc-600">
+              <li><i class="bi bi-check2 text-[#10B981]"></i> AI Ride Assistance</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Battery Optimization</li>
+              <li><i class="bi bi-check2 text-[#10B981]"></i> Smart Dashboard</li>
+            </ul>
+
+          </div>
+
+          <div class="p-8 border-t border-zinc-100">
+            <div class="flex items-end justify-between mb-5">
+              <h4 class="text-3xl font-black">₹159</h4>
+              <span class="text-zinc-400 text-sm">/ hour</span>
+            </div>
+
+            <button class="w-full bg-zinc-900 text-white font-bold py-3 rounded-xl hover:bg-[#10B981] transition">
+              Rent Now
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Target container slot element for footer inclusion -->
+  <div id="footer"></div>
+
+  <!-- Global JavaScript Configuration Engine -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

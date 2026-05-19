@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoGlide | Mobility Insights & Stories</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* THEME TOGGLE VARIABLES */
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    img {
+      object-fit: cover;
+    }
+
+    /* DARK MODE OVERRIDES FOR BLOG PAGE */
+    [data-theme="dark"] .text-zinc-900,
+    [data-theme="dark"] .text-zinc-800,
+    [data-theme="dark"] .text-zinc-700 {
+      color: #ffffff !important;
+    }
+    
+    [data-theme="dark"] .text-zinc-600,
+    [data-theme="dark"] .text-zinc-500,
+    [data-theme="dark"] .text-zinc-400 {
+      color: #a1a1aa !important;
+    }
+    
+    [data-theme="dark"] .border-zinc-100:not(:hover),
+    [data-theme="dark"] .border-zinc-200:not(:hover) {
+      border-color: #333333 !important;
+    }
+    
+    [data-theme="dark"] .bg-white\/80,
+    [data-theme="dark"] .bg-white\/90,
+    [data-theme="dark"] .bg-white\/95 {
+      background-color: rgba(30, 30, 30, 0.9) !important;
+    }
+    
+    [data-theme="dark"] .bg-zinc-50,
+    [data-theme="dark"] .bg-zinc-100,
+    [data-theme="dark"] .bg-zinc-200 {
+      background-color: #1a1a1a !important;
+      border-color: #333333 !important;
+    }
+    
+    /* Fix hardcoded gradients and overlays */
+    [data-theme="dark"] .from-zinc-50 {
+      background-image: linear-gradient(to left, #1a1a1a, #111111) !important;
+    }
+
+    [data-theme="dark"] .bg-white\/10 {
+      background-color: rgba(0, 0, 0, 0.4) !important;
+    }
+
+    /* Restore hover states broken by global !important rules */
+    [data-theme="dark"] .hover\:bg-\[\#10B981\]:hover,
+    [data-theme="dark"] .group:hover .group-hover\:bg-\[\#10B981\] {
+      background-color: #10B981 !important;
+      border-color: #10B981 !important;
+      color: #ffffff !important;
+    }
+    
+    [data-theme="dark"] .hover\:border-\[\#10B981\]:hover {
+      border-color: #10B981 !important;
+    }
+
+    [data-theme="dark"] .hover\:border-\[\#10B981\]\/50:hover {
+      border-color: rgba(16, 185, 129, 0.5) !important;
+    }
+    
+    [data-theme="dark"] .hover\:text-\[\#10B981\]:hover,
+    [data-theme="dark"] .group:hover .group-hover\:text-\[\#10B981\] {
+      color: #10B981 !important;
+    }
+    
+    [data-theme="dark"] .hover\:bg-white:hover {
+      background-color: #222222 !important;
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased bg-white text-zinc-900">
+  <!-- Navbar wrapper target -->
+  <div id="navbar"></div>
+
+  <!-- ==========================================
+       1. HERO BANNER SECTION (MAGAZINE/EDITORIAL STYLE)
+       ========================================== -->
+  <header class="relative bg-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden border-b border-zinc-100">
+    <!-- Background Elements -->
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-zinc-50 to-white -z-10"></div>
+    <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-[#10B981] opacity-[0.04] rounded-full blur-[100px] animate-pulse -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+
+        <!-- Left Copy: Headlines & CTA -->
+        <div class="lg:col-span-6 space-y-8 text-center lg:text-left">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#10B981]/10 text-[#10B981] text-xs font-bold rounded-full uppercase tracking-widest border border-[#10B981]/20">
+            <i class="bi bi-journal-richtext"></i> EcoGlide Editorial
+          </span>
+
+          <h1 class="text-5xl sm:text-6xl font-black text-zinc-900 tracking-tight leading-[1.15]">
+            Insights on Modern <br/>
+            <span class="text-[#10B981] relative inline-block mt-2">
+              Urban Mobility
+              <!-- Hand-drawn style SVG underline -->
+              <svg class="absolute w-full h-3 -bottom-1 left-0 text-[#10B981]/30" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="4" fill="transparent"/></svg>
+            </span>
+          </h1>
+
+          <p class="text-zinc-500 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+            Explore expert-written articles, travel insights, and industry updates focused on electric scooter rentals, smart mobility solutions, and curated city tour experiences.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+            <a href="#latest" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-zinc-900 hover:bg-black text-white font-bold rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.1)] transition-all duration-300 transform hover:-translate-y-1">
+              Read Latest <i class="bi bi-arrow-down"></i>
+            </a>
+            <a href="#categories" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white border-2 border-zinc-200 hover:border-[#10B981] hover:text-[#10B981] text-zinc-700 font-bold rounded-xl transition-all duration-300 transform hover:-translate-y-1">
+              Browse Topics
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Featured Article Card -->
+        <div class="lg:col-span-6 relative mt-12 lg:mt-0">
+          <!-- Soft glowing shadow behind the card -->
+          <div class="absolute -inset-4 bg-gradient-to-tr from-[#10B981]/20 to-transparent opacity-50 blur-2xl rounded-[3rem] -z-10"></div>
+
+          <article class="bg-white rounded-[2rem] border border-zinc-100 p-3 shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-transform duration-500 hover:-translate-y-2 group cursor-pointer relative overflow-hidden">
+            
+            <div class="relative h-[280px] sm:h-[350px] rounded-3xl overflow-hidden mb-6">
+              <img src="images/bike1.webp" alt="Urban Mobility" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+              <div class="absolute top-4 left-4">
+                <span class="px-4 py-1.5 bg-white/95 backdrop-blur-md text-zinc-900 text-[10px] font-black uppercase tracking-widest rounded-full shadow-sm">Featured</span>
+              </div>
+            </div>
+
+            <div class="px-5 pb-5">
+              <div class="flex items-center gap-3 text-[11px] font-bold uppercase tracking-widest text-zinc-400 mb-4">
+                <span class="text-[#10B981]">Smart Cities</span>
+                <span>•</span>
+                <span>5 Min Read</span>
+              </div>
+              
+              <h3 class="text-2xl sm:text-3xl font-black text-zinc-900 leading-tight mb-4 group-hover:text-[#10B981] transition-colors">
+                The Future of Electric Scooter Rentals in Smart Cities
+              </h3>
+              
+              <p class="text-sm text-zinc-500 leading-relaxed mb-6">
+                An in-depth look at how micro-mobility is reshaping urban transportation systems and reducing carbon footprints globally.
+              </p>
+
+              <div class="flex items-center justify-between border-t border-zinc-100 pt-6">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-sm font-black text-zinc-400">EG</div>
+                  <div>
+                    <p class="text-xs font-bold text-zinc-900">EcoGlide Editorial</p>
+                    <p class="text-[10px] text-zinc-400 font-medium uppercase tracking-wider mt-0.5">Industry Insights</p>
+                  </div>
+                </div>
+                <div class="w-10 h-10 rounded-full border border-zinc-200 flex items-center justify-center text-zinc-400 group-hover:bg-[#10B981] group-hover:text-white group-hover:border-[#10B981] transition-all duration-300">
+                  <i class="bi bi-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Decorative Floating Element -->
+          <div class="hidden sm:block absolute -right-6 top-16 bg-white px-6 py-4 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-zinc-100 animate-bounce" style="animation-duration: 3s;">
+            <div class="flex items-center gap-3">
+              <i class="bi bi-fire text-[#10B981] text-xl"></i>
+              <div>
+                <p class="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">Trending Now</p>
+                <p class="text-sm font-black text-zinc-900">10k+ Readers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       2. BLOG OVERVIEW SECTION
+       ========================================== -->
+  <section class="py-20 bg-white border-b border-zinc-100">
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
+      <div class="w-16 h-1 bg-[#10B981] mx-auto rounded-full mb-6"></div>
+      <h2 class="text-3xl sm:text-4xl font-black text-zinc-900 tracking-tight">Your Guide to Modern Urban Mobility</h2>
+      <p class="text-zinc-500 leading-relaxed text-lg">
+        Our blog is a dedicated knowledge platform for riders, travelers, and city explorers. We share practical insights, expert tips, and industry updates that help you understand and experience the evolving world of electric scooter mobility.
+      </p>
+      <p class="text-zinc-500 leading-relaxed">
+        From daily commuting solutions to tourism-focused ride experiences, our content is designed to inform, inspire, and guide every rider.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       3. FEATURED CATEGORIES SECTION
+       ========================================== -->
+  <section id="categories" class="py-24 bg-zinc-50 border-b border-zinc-100">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-sm font-black text-[#10B981] uppercase tracking-widest">Knowledge Hub</span>
+        <h2 class="text-4xl font-black tracking-tight text-zinc-900">Explore Topics That Matter</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="bg-white p-8 rounded-[2rem] border border-zinc-200 shadow-sm transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+          <div class="w-14 h-14 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-2xl font-bold mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-bar-chart-fill"></i></div>
+          <h3 class="font-bold text-xl mb-3 text-zinc-900">Urban Mobility</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Understand how electric scooters are transforming transportation in modern cities.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-[2rem] border border-zinc-200 shadow-sm transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+          <div class="w-14 h-14 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-2xl font-bold mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-compass-fill"></i></div>
+          <h3 class="font-bold text-xl mb-3 text-zinc-900">Travel & Exploration</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Understand how electric scooters are transforming transportation in modern cities.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-[2rem] border border-zinc-200 shadow-sm transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+          <div class="w-14 h-14 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-2xl font-bold mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-shield-fill-check"></i></div>
+          <h3 class="font-bold text-xl mb-3 text-zinc-900">Rider's health Safety</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Understand how electric scooters are transforming transportation in modern cities.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-[2rem] border border-zinc-200 shadow-sm transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
+          <div class="w-14 h-14 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-2xl font-bold mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-cpu-fill"></i></div>
+          <h3 class="font-bold text-xl mb-3 text-zinc-900">Smart Technology</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Understand how electric scooters are transforming transportation in modern cities.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       4. LATEST ARTICLES SECTION
+       ========================================== -->
+  <section id="latest" class="py-24 bg-white border-b border-zinc-100">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div class="space-y-4">
+          <span class="text-sm font-black text-[#10B981] uppercase tracking-widest">Recent Publications</span>
+          <h2 class="text-4xl font-black text-zinc-900 tracking-tight">Fresh Stories from the World of E-Scooters</h2>
+        </div>
+        <a href="#" class="text-sm font-bold text-zinc-900 hover:text-[#10B981] transition-colors border-b-2 border-zinc-900 hover:border-[#10B981] pb-1">View All Articles</a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Article 1 -->
+        <article class="group cursor-pointer flex flex-col h-full">
+          <div class="rounded-3xl overflow-hidden mb-6 relative h-64 border border-zinc-200">
+            <img src="images/img2.webp" alt="Commute" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-zinc-800">Commute</div>
+          </div>
+          <div class="flex-grow">
+            <h3 class="text-2xl font-black text-zinc-900 mb-3 group-hover:text-[#10B981] transition-colors leading-snug">Top Benefits of Using E-Scooters for Daily Commutes</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed mb-6">Explore how electric scooters improve convenience, reduce costs, and save time in busy metropolitan areas.</p>
+          </div>
+          <div class="flex items-center justify-between pt-6 border-t border-zinc-100 mt-auto">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-zinc-200 flex items-center justify-center text-xs font-bold text-zinc-500">EG</div>
+              <span class="text-xs font-bold text-zinc-900">EcoGlide Editorial</span>
+            </div>
+            <span class="text-xs font-medium text-zinc-400">4 min read</span>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="group cursor-pointer flex flex-col h-full">
+          <div class="rounded-3xl overflow-hidden mb-6 relative h-64 border border-zinc-200">
+            <img src="images/img4.jpg" alt="Tourism" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-zinc-800">Tourism</div>
+          </div>
+          <div class="flex-grow">
+            <h3 class="text-2xl font-black text-zinc-900 mb-3 group-hover:text-[#10B981] transition-colors leading-snug">How Guided Scooter Tours Are Changing Urban Tourism</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed mb-6">Learn how curated ride experiences are becoming a preferred way to explore cities and historic landmarks.</p>
+          </div>
+          <div class="flex items-center justify-between pt-6 border-t border-zinc-100 mt-auto">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-zinc-200 flex items-center justify-center text-xs font-bold text-zinc-500">EG</div>
+              <span class="text-xs font-bold text-zinc-900">EcoGlide Editorial</span>
+            </div>
+            <span class="text-xs font-medium text-zinc-400">6 min read</span>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="group cursor-pointer flex flex-col h-full">
+          <div class="rounded-3xl overflow-hidden mb-6 relative h-64 border border-zinc-200">
+            <img src="images/img5.jpg" alt="Safety" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-zinc-800">Safety Guide</div>
+          </div>
+          <div class="flex-grow">
+            <h3 class="text-2xl font-black text-zinc-900 mb-3 group-hover:text-[#10B981] transition-colors leading-snug">Essential Tips for First-Time E-Scooter Riders</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed mb-6">A complete professional guide covering safety, handling, and ride preparation for beginners hitting the streets.</p>
+          </div>
+          <div class="flex items-center justify-between pt-6 border-t border-zinc-100 mt-auto">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-zinc-200 flex items-center justify-center text-xs font-bold text-zinc-500">EG</div>
+              <span class="text-xs font-bold text-zinc-900">EcoGlide Editorial</span>
+            </div>
+            <span class="text-xs font-medium text-zinc-400">3 min read</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       5. SUSTAINABILITY & INDUSTRY INSIGHTS
+       ========================================== -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      
+      <!-- Left Image Layout -->
+      <div class="relative group order-1">
+        <div class="rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border border-zinc-200 shadow-[0_20px_50px_rgba(0,0,0,0.08)] relative h-[320px] sm:h-[420px] lg:h-[500px]">
+          <img 
+            src="images/bike3.jpg" 
+            alt="Sustainable City" 
+            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+          >
+          <div class="absolute inset-0 bg-black/10"></div>
+        </div>
+      </div>
+
+      <!-- Right Content -->
+      <div class="space-y-6 sm:space-y-8 lg:pl-6 xl:pl-10 order-2">
+        
+        <div>
+          <span class="text-xs sm:text-sm font-black text-[#10B981] uppercase tracking-[0.2em]">
+            Industry Impact
+          </span>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-zinc-900 tracking-tight leading-tight mt-3">
+            Driving the Future of Clean Urban Travel
+          </h2>
+        </div>
+        
+        <p class="text-zinc-500 text-base sm:text-lg leading-relaxed">
+          Electric scooter rental systems play a vital role in reducing traffic congestion and carbon emissions while promoting sustainable city living globally.
+        </p>
+
+        <div class="space-y-4 pt-2 sm:pt-4">
+          
+          <h4 class="font-bold text-zinc-900 uppercase tracking-widest text-xs sm:text-sm mb-3">
+            Key Industry Benefits
+          </h4>
+
+          <!-- Benefit Item -->
+          <div class="flex items-start sm:items-center gap-4 bg-zinc-50 p-4 rounded-2xl border border-zinc-100 hover:border-[#10B981]/50 hover:bg-white transition-all duration-300">
+            <i class="bi bi-check-circle-fill text-[#10B981] text-lg sm:text-xl mt-1 sm:mt-0"></i>
+            <span class="font-semibold text-zinc-800 text-sm sm:text-base leading-relaxed">
+              Eco-Friendly Transportation Solutions
+            </span>
+          </div>
+
+          <!-- Benefit Item -->
+          <div class="flex items-start sm:items-center gap-4 bg-zinc-50 p-4 rounded-2xl border border-zinc-100 hover:border-[#10B981]/50 hover:bg-white transition-all duration-300">
+            <i class="bi bi-check-circle-fill text-[#10B981] text-lg sm:text-xl mt-1 sm:mt-0"></i>
+            <span class="font-semibold text-zinc-800 text-sm sm:text-base leading-relaxed">
+              Reduced Fossil Fuel Dependency
+            </span>
+          </div>
+
+          <!-- Benefit Item -->
+          <div class="flex items-start sm:items-center gap-4 bg-zinc-50 p-4 rounded-2xl border border-zinc-100 hover:border-[#10B981]/50 hover:bg-white transition-all duration-300">
+            <i class="bi bi-check-circle-fill text-[#10B981] text-lg sm:text-xl mt-1 sm:mt-0"></i>
+            <span class="font-semibold text-zinc-800 text-sm sm:text-base leading-relaxed">
+              Smarter Urban Infrastructure Integration
+            </span>
+          </div>
+
+          <!-- Benefit Item -->
+          <div class="flex items-start sm:items-center gap-4 bg-zinc-50 p-4 rounded-2xl border border-zinc-100 hover:border-[#10B981]/50 hover:bg-white transition-all duration-300">
+            <i class="bi bi-check-circle-fill text-[#10B981] text-lg sm:text-xl mt-1 sm:mt-0"></i>
+            <span class="font-semibold text-zinc-800 text-sm sm:text-base leading-relaxed">
+              Improved Last-Mile Connectivity
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Target container slot element for footer inclusion -->
+  <div id="footer"></div>
+
+  <!-- Global JavaScript Configuration Engine -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

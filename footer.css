@@ -1,0 +1,13 @@
+[data-theme="dark"] footer {
+  background-color: #111111 !important;
+}
+
+[data-theme="dark"] footer .text-slate-900 {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] footer .text-gray-600,
+[data-theme="dark"] footer .text-gray-500,
+[data-theme="dark"] footer .text-gray-400 {
+  color: #a1a1aa !important;
+}

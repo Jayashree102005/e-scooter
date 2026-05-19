@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoGlide | Our Services</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* THEME TOGGLE VARIABLES */
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    img {
+      object-fit: cover;
+    }
+
+    /* DARK MODE OVERRIDES FOR SERVICE PAGE */
+    [data-theme="dark"] .text-zinc-900,
+    [data-theme="dark"] .text-zinc-800,
+    [data-theme="dark"] .text-zinc-700 {
+      color: #ffffff !important;
+    }
+    
+    [data-theme="dark"] .text-zinc-600,
+    [data-theme="dark"] .text-zinc-500,
+    [data-theme="dark"] .text-zinc-400 {
+      color: #a1a1aa !important;
+    }
+    
+    [data-theme="dark"] .border-zinc-100:not(:hover),
+    [data-theme="dark"] .border-zinc-200:not(:hover) {
+      border-color: #333333 !important;
+    }
+    
+    [data-theme="dark"] .bg-white\/80 {
+      background-color: rgba(30, 30, 30, 0.8) !important;
+    }
+    
+    [data-theme="dark"] .bg-zinc-50 {
+      background-color: #1a1a1a !important;
+      border-color: #333333 !important;
+    }
+
+    [data-theme="dark"] .bg-red-50 {
+      background-color: rgba(239, 68, 68, 0.1) !important;
+    }
+    
+    /* Fix hardcoded white gradient */
+    [data-theme="dark"] .from-white {
+      background-image: linear-gradient(to top, #111111, rgba(17,17,17,0.95), rgba(17,17,17,0.90)) !important;
+    }
+
+    /* Restore hover states broken by global !important rules */
+    [data-theme="dark"] .hover\:bg-\[\#10B981\]:hover,
+    [data-theme="dark"] .group:hover .group-hover\:bg-\[\#10B981\] {
+      background-color: #10B981 !important;
+      border-color: #10B981 !important;
+      color: #ffffff !important;
+    }
+    
+    [data-theme="dark"] .hover\:border-\[\#10B981\]:hover {
+      border-color: #10B981 !important;
+    }
+
+    [data-theme="dark"] .hover\:border-\[\#10B981\]\/30:hover {
+      border-color: rgba(16, 185, 129, 0.3) !important;
+    }
+    [data-theme="dark"] .hover\:border-\[\#10B981\]\/50:hover {
+      border-color: rgba(16, 185, 129, 0.5) !important;
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased bg-white text-zinc-900">
+  <!-- Navbar wrapper target -->
+  <div id="navbar"></div>
+
+  <!-- ==========================================
+       1. HERO BANNER SECTION (PURE WHITE WITH IMAGE)
+       ========================================== -->
+  <header class="relative bg-white pt-32 pb-24 overflow-hidden border-b border-zinc-100">
+    <div class="absolute top-[10%] left-[50%] w-[500px] h-[500px] bg-[#10B981] opacity-5 rounded-full blur-[100px] transform -translate-x-1/2 animate-pulse"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#10B981]/10 text-[#10B981] text-xs font-bold rounded-full uppercase tracking-widest border border-[#10B981]/20">
+            <i class="bi bi-ui-checks-grid"></i> Premium Offerings
+          </span>
+          
+          <h1 class="text-5xl sm:text-6xl font-black text-zinc-900 tracking-tight leading-[1.1]">
+            Smart Mobility Services for <span class="text-[#10B981]">Modern Cities</span>
+          </h1>
+          
+          <p class="text-zinc-500 text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 mt-6">
+            Discover flexible e-scooter rental solutions and immersive ride experiences designed for commuters, tourists, and urban explorers.
+          </p>
+          
+          <p class="text-sm text-zinc-400 max-w-xl mx-auto lg:mx-0 mt-4 leading-relaxed border-l-2 border-[#10B981] pl-5">
+            From short city rides to guided tour adventures, our services are built to provide safe, convenient, and eco-friendly transportation powered by smart technology.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-zinc-100">
+            <div class="flex items-center justify-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-white border border-zinc-200 shadow-sm flex items-center justify-center text-[#10B981]"><i class="bi bi-unlock-fill"></i></div>
+              <h4 class="text-xs font-bold text-zinc-800">Instant Access</h4>
+            </div>
+            <div class="flex items-center justify-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-white border border-zinc-200 shadow-sm flex items-center justify-center text-[#10B981]"><i class="bi bi-calendar2-range-fill"></i></div>
+              <h4 class="text-xs font-bold text-zinc-800">Flexible Plans</h4>
+            </div>
+            <div class="flex items-center justify-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-white border border-zinc-200 shadow-sm flex items-center justify-center text-[#10B981]"><i class="bi bi-window-sidebar"></i></div>
+              <h4 class="text-xs font-bold text-zinc-800">Smart Dashboard</h4>
+            </div>
+            <div class="flex items-center justify-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-white border border-zinc-200 shadow-sm flex items-center justify-center text-[#10B981]"><i class="bi bi-globe-americas"></i></div>
+              <h4 class="text-xs font-bold text-zinc-800">Sustainable Travel</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Hero Image Layout -->
+        <div class="lg:col-span-6 relative group cursor-pointer mt-12 lg:mt-0">
+          <div class="rounded-[2rem] overflow-hidden border border-zinc-200 relative shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-transform duration-700 hover:scale-[1.02]">
+            <img class="w-full h-[550px] object-cover transition-transform duration-700 group-hover:scale-110" src="images/bike9.jpg" alt="Urban Scooter Rental">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       2. E-SCOOTER RENTAL SERVICES (WITH IMAGES)
+       ========================================== -->
+  <section class="py-24 bg-white text-zinc-900 border-b border-zinc-100">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-sm font-black text-[#10B981] uppercase tracking-widest">Fleet Solutions</span>
+        <h2 class="text-4xl sm:text-5xl font-black text-zinc-900 tracking-tight">Flexible Scooter Rentals for Every Journey</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Rental Card 1 -->
+        <div class="bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer flex flex-col">
+          <div class="h-48 w-full overflow-hidden relative">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/imgs1.png" alt="Short Distance Rides">
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="w-12 h-12 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl font-bold mb-4 transition-transform duration-300 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-stopwatch"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-zinc-900">Short Distance Rides</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">Perfect for quick commutes, shopping trips, and daily city travel effortlessly.</p>
+          </div>
+        </div>
+
+        <!-- Rental Card 2 -->
+        <div class="bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer flex flex-col">
+          <div class="h-48 w-full overflow-hidden relative">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/imgs2.webp" alt="Hourly Rentals">
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="w-12 h-12 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl font-bold mb-4 transition-transform duration-300 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-clock-history"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-zinc-900">Hourly Bike Rentals</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">Perfect for quick commutes, shopping trips, and daily city travel effortlessly.</p>
+          </div>
+        </div>
+
+        <!-- Rental Card 3 -->
+        <div class="bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer flex flex-col">
+          <div class="h-48 w-full overflow-hidden relative">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/imgs3.png" alt="Full-Day Rentals">
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="w-12 h-12 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl font-bold mb-4 transition-transform duration-300 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-brightness-high"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-zinc-900">Full-Day Rentals</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">Perfect for quick commutes, shopping trips, and daily city travel effortlessly.</p>
+          </div>
+        </div>
+
+        <!-- Rental Card 4 -->
+        <div class="bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer flex flex-col">
+          <div class="h-48 w-full overflow-hidden relative">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/imgs4.png" alt="Corporate Solutions">
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="w-12 h-12 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl font-bold mb-4 transition-transform duration-300 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-building"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-zinc-900">Corporate Solutions</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">Perfect for quick commutes, shopping trips, and daily city travel effortlessly.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       3. GUIDED TOUR EXPERIENCE (PURE WHITE)
+       ========================================== -->
+  <section class="py-24 bg-white text-zinc-900 border-b border-zinc-100 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#10B981_0%,transparent_15%)] opacity-10"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Left: Copy & Categories -->
+        <div class="lg:col-span-6 space-y-8 text-center lg:text-left">
+          <span class="text-sm font-black text-[#10B981] uppercase tracking-widest">Immersive Journeys</span>
+          <h2 class="text-4xl sm:text-5xl font-black text-zinc-900 tracking-tight leading-tight">
+            Explore the City Through Curated Ride Experiences
+          </h2>
+          <p class="text-zinc-500 text-base leading-relaxed">
+            Our guided e-scooter tours help riders discover popular attractions, hidden streets, cultural spots, and scenic routes in a unique and exciting way.
+          </p>
+
+          <div class="pt-4">
+            <h4 class="text-sm font-bold text-zinc-800 uppercase tracking-widest mb-4">Tour Categories</h4>
+            <div class="flex flex-wrap justify-center lg:justify-start gap-3">
+              <span class="px-5 py-2.5 bg-white shadow-sm border border-zinc-200 text-zinc-700 font-bold rounded-full text-xs hover:border-[#10B981] hover:bg-[#10B981] hover:text-white transition-all cursor-pointer">City Landmarks</span>
+              <span class="px-5 py-2.5 bg-white shadow-sm border border-zinc-200 text-zinc-700 font-bold rounded-full text-xs hover:border-[#10B981] hover:bg-[#10B981] hover:text-white transition-all cursor-pointer">Sunset & Night Rides</span>
+              <span class="px-5 py-2.5 bg-white shadow-sm border border-zinc-200 text-zinc-700 font-bold rounded-full text-xs hover:border-[#10B981] hover:bg-[#10B981] hover:text-white transition-all cursor-pointer">Food & Café Trails</span>
+              <span class="px-5 py-2.5 bg-white shadow-sm border border-zinc-200 text-zinc-700 font-bold rounded-full text-xs hover:border-[#10B981] hover:bg-[#10B981] hover:text-white transition-all cursor-pointer">Beachside & Nature</span>
+              <span class="px-5 py-2.5 bg-white shadow-sm border border-zinc-200 text-zinc-700 font-bold rounded-full text-xs hover:border-[#10B981] hover:bg-[#10B981] hover:text-white transition-all cursor-pointer">Photography Exploration</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Features Grid -->
+        <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          
+          <div class="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-8 rounded-2xl border border-zinc-100 hover:border-[#10B981]/50 hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] transition-all duration-300 transform hover:-translate-y-2 group cursor-default">
+            <i class="bi bi-cursor-fill text-3xl text-[#10B981] mb-4 block group-hover:scale-110 transition-transform"></i>
+            <h4 class="text-lg font-bold text-zinc-900 mb-2">Smart Navigation</h4>
+            <p class="text-xs text-zinc-500">Built-in support directly into your dashboard.</p>
+          </div>
+          
+          <div class="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-8 rounded-2xl border border-zinc-100 hover:border-[#10B981]/50 hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] transition-all duration-300 transform hover:-translate-y-2 group cursor-default">
+            <i class="bi bi-signpost-split-fill text-3xl text-[#10B981] mb-4 block group-hover:scale-110 transition-transform"></i>
+            <h4 class="text-lg font-bold text-zinc-900 mb-2">Routes Guidance</h4>
+            <p class="text-xs text-zinc-500">Built-in support directly into your dashboard.</p>
+          </div>
+          
+          <div class="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-8 rounded-2xl border border-zinc-100 hover:border-[#10B981]/50 hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] transition-all duration-300 transform hover:-translate-y-2 group cursor-default">
+            <i class="bi bi-shield-plus text-3xl text-[#10B981] mb-4 block group-hover:scale-110 transition-transform"></i>
+            <h4 class="text-lg font-bold text-zinc-900 mb-2">Safety Assistance</h4>
+            <p class="text-xs text-zinc-500">Built-in support directly into your dashboard.</p>
+          </div>
+          
+          <div class="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-8 rounded-2xl border border-zinc-100 hover:border-[#10B981]/50 hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] transition-all duration-300 transform hover:-translate-y-2 group cursor-default">
+            <i class="bi bi-people-fill text-3xl text-[#10B981] mb-4 block group-hover:scale-110 transition-transform"></i>
+            <h4 class="text-lg font-bold text-zinc-900 mb-2">Group bike Rides</h4>
+            <p class="text-xs text-zinc-500">Built-in support directly into your dashboard.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       4. SMART DASHBOARD SERVICES (PURE WHITE)
+       ========================================== -->
+  <section class="py-24 bg-white text-zinc-900 border-b border-zinc-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Left Smartphone Interactive UI Graphic -->
+        <div class="lg:col-span-5 flex justify-center order-last lg:order-first">
+          <div class="bg-white p-6 rounded-[2.5rem] w-72 h-[500px] border-[8px] border-zinc-100 shadow-[0_20px_50px_rgba(0,0,0,0.1)] space-y-4 relative transition-all duration-500 transform hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(16,185,129,0.15)]">
+            <div class="flex justify-between items-center text-[10px] text-zinc-400 font-mono"><span class="text-[#10B981] flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span> App Sync</span> <span>100% Batt</span></div>
+            
+            <div class="bg-zinc-50 rounded-xl p-4 border border-zinc-200 space-y-1">
+              <span class="text-[9px] text-zinc-400 block uppercase font-bold tracking-widest">Active Ride Time</span>
+              <div class="text-2xl font-black text-zinc-900 font-mono">14:02 <span class="text-xs text-zinc-400 font-normal">min</span></div>
+            </div>
+
+            <div class="bg-zinc-50 rounded-xl p-4 border border-zinc-200 space-y-3">
+              <span class="text-[9px] text-zinc-400 block uppercase font-bold tracking-widest">Quick Dashboard</span>
+              <div class="grid grid-cols-2 gap-2">
+                <button class="bg-white border border-zinc-200 text-[10px] text-zinc-600 py-2 rounded-lg font-bold shadow-sm">Lock</button>
+                <button class="bg-[#10B981]/10 border border-[#10B981]/30 text-[10px] text-[#10B981] py-2 rounded-lg font-bold">Scan</button>
+              </div>
+            </div>
+
+            <div class="bg-zinc-50 h-28 rounded-xl border border-zinc-200 relative overflow-hidden p-3 flex flex-col justify-end">
+              <div class="absolute inset-0 bg-[radial-gradient(#10B981_1px,transparent_1px)] [background-size:12px_12px] opacity-10"></div>
+              <span class="relative z-10 text-[9px] font-mono text-white bg-[#10B981] px-2 py-1 rounded w-max font-bold"><i class="bi bi-geo-alt"></i> Route Active</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content Block Overview -->
+        <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+          <div>
+            <span class="text-sm font-black text-[#10B981] uppercase tracking-widest">Digital Control</span>
+            <h2 class="text-4xl sm:text-5xl font-black text-zinc-900 tracking-tight mt-2">Intelligent Ride Management at Your Fingertips</h2>
+            <p class="text-zinc-500 leading-relaxed text-base mt-4">
+              The rider dashboard provides complete control over every ride experience through a simple, connected, and highly intuitive interface.
+            </p>
+          </div>
+
+          <!-- Feature Description Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+            <div class="flex items-center gap-4 p-4 rounded-xl border border-zinc-200 bg-white shadow-sm hover:border-[#10B981] transition-colors cursor-default">
+              <i class="bi bi-qr-code text-[#10B981] text-xl"></i> <span class="text-sm font-bold text-zinc-800">QR Code Scooter Unlock</span>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-xl border border-zinc-200 bg-white shadow-sm hover:border-[#10B981] transition-colors cursor-default">
+              <i class="bi bi-crosshair text-[#10B981] text-xl"></i> <span class="text-sm font-bold text-zinc-800">Real-Time Ride Tracking</span>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-xl border border-zinc-200 bg-white shadow-sm hover:border-[#10B981] transition-colors cursor-default">
+              <i class="bi bi-battery-half text-[#10B981] text-xl"></i> <span class="text-sm font-bold text-zinc-800">Battery Level Monitoring</span>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-xl border border-zinc-200 bg-white shadow-sm hover:border-[#10B981] transition-colors cursor-default">
+              <i class="bi bi-bar-chart-line text-[#10B981] text-xl"></i> <span class="text-sm font-bold text-zinc-800">Ride Duration Analytics</span>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-xl border border-zinc-200 bg-white shadow-sm hover:border-[#10B981] transition-colors cursor-default">
+              <i class="bi bi-wallet2 text-[#10B981] text-xl"></i> <span class="text-sm font-bold text-zinc-800">Wallet & Payment Management</span>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-xl border border-zinc-200 bg-white shadow-sm hover:border-[#10B981] transition-colors cursor-default">
+              <i class="bi bi-journal-check text-[#10B981] text-xl"></i> <span class="text-sm font-bold text-zinc-800">Ride History Access</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       5. SAFETY & SUPPORT SERVICES (PURE WHITE)
+       ========================================== -->
+  <section class="py-24 bg-white text-zinc-900 border-b border-zinc-100">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-sm font-black text-[#10B981] uppercase tracking-widest">Ultimate Protection</span>
+        <h2 class="text-4xl sm:text-5xl font-black tracking-tight text-zinc-900">Built Around Rider Safety & Reliability</h2>
+        <p class="text-zinc-500 text-base">We prioritize rider protection through advanced monitoring systems and responsive support services.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="bg-white rounded-[2rem] border border-zinc-200 p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] hover:border-[#10B981]/30 transition-all duration-300 transform hover:-translate-y-2 group cursor-default">
+          <div class="w-14 h-14 bg-white border border-zinc-100 shadow-sm text-[#10B981] rounded-full flex items-center justify-center text-2xl mb-6 transition-transform duration-300 group-hover:scale-110"><i class="bi bi-map"></i></div>
+          <h3 class="font-bold text-xl mb-2 text-zinc-900">Geo-Fenced Ride Zones</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+        </div>
+
+        <div class="bg-white rounded-[2rem] border border-zinc-200 p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] hover:border-[#10B981]/30 transition-all duration-300 transform hover:-translate-y-2 group cursor-default">
+          <div class="w-14 h-14 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-2xl mb-6 transition-transform duration-300 group-hover:scale-110"><i class="bi bi-exclamation-triangle"></i></div>
+          <h3 class="font-bold text-xl mb-2 text-zinc-900">Emergency Assistance</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+        </div>
+
+        <div class="bg-white rounded-[2rem] border border-zinc-200 p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] hover:border-[#10B981]/30 transition-all duration-300 transform hover:-translate-y-2 group cursor-default">
+          <div class="w-14 h-14 bg-white border border-zinc-100 shadow-sm text-[#10B981] rounded-full flex items-center justify-center text-2xl mb-6 transition-transform duration-300 group-hover:scale-110"><i class="bi bi-p-square"></i></div>
+          <h3 class="font-bold text-xl mb-2 text-zinc-900">Smart Parking Validation</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+        </div>
+
+        <div class="bg-white rounded-[2rem] border border-zinc-200 p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] hover:border-[#10B981]/30 transition-all duration-300 transform hover:-translate-y-2 group cursor-default">
+          <div class="w-14 h-14 bg-white border border-zinc-100 shadow-sm text-[#10B981] rounded-full flex items-center justify-center text-2xl mb-6 transition-transform duration-300 group-hover:scale-110"><i class="bi bi-activity"></i></div>
+          <h3 class="font-bold text-xl mb-2 text-zinc-900">Ride Monitoring</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+        </div>
+
+        <div class="bg-white rounded-[2rem] border border-zinc-200 p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] hover:border-[#10B981]/30 transition-all duration-300 transform hover:-translate-y-2 group cursor-default">
+          <div class="w-14 h-14 bg-white border border-zinc-100 shadow-sm text-[#10B981] rounded-full flex items-center justify-center text-2xl mb-6 transition-transform duration-300 group-hover:scale-110"><i class="bi bi-heart-pulse"></i></div>
+          <h3 class="font-bold text-xl mb-2 text-zinc-900">Scooter Health Tracking</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+        </div>
+
+        <!-- Dedicated Support Highlight -->
+        <div class="bg-[#10B981] rounded-[2rem] p-8 shadow-xl text-white transform hover:-translate-y-2 transition-all duration-300 group cursor-default">
+          <div class="w-14 h-14 bg-white text-[#10B981] rounded-full flex items-center justify-center text-2xl mb-6 transition-transform duration-300 group-hover:scale-110"><i class="bi bi-headset"></i></div>
+          <h3 class="font-bold text-xl mb-2">Customer Support</h3>
+          <p class="text-sm font-medium leading-relaxed mb-6 text-white/90">Dedicated 24/7 assistance  issues support directly through the app.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       6. SUSTAINABLE MOBILITY (LIGHT IMAGE WRAPPER)
+       ========================================== -->
+  <section class="py-32 bg-white relative overflow-hidden border-b border-zinc-100">
+    <!-- Light Overlay Image Background -->
+    <div class="absolute inset-0">
+      <img class="w-full h-full object-cover opacity-15" src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1600&q=80" alt="Sustainable Green Forest City">
+      <div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/90"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+      <span class="text-sm font-black text-[#10B981] uppercase tracking-widest">Eco Impact</span>
+      <h2 class="text-4xl sm:text-6xl font-black text-zinc-900 tracking-tight leading-tight mt-4 max-w-3xl mx-auto">
+        Supporting Cleaner & Smarter Transportation
+      </h2>
+      <p class="text-zinc-600 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
+        Our electric mobility services are designed to reduce traffic congestion, fuel consumption, and environmental impact while improving urban travel experiences.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+        <div class="bg-white/80 backdrop-blur-md shadow-lg p-6 rounded-2xl border border-zinc-100 hover:border-[#10B981]/50 transition-colors">
+          <h3 class="text-xl font-bold text-zinc-900 mb-1">Zero</h3>
+          <p class="text-xs font-bold text-[#10B981] uppercase tracking-wider">Emission Transport</p>
+        </div>
+        <div class="bg-white/80 backdrop-blur-md shadow-lg p-6 rounded-2xl border border-zinc-100 hover:border-[#10B981]/50 transition-colors">
+          <h3 class="text-xl font-bold text-zinc-900 mb-1">High</h3>
+          <p class="text-xs font-bold text-[#10B981] uppercase tracking-wider">Energy Efficiency</p>
+        </div>
+        <div class="bg-white/80 backdrop-blur-md shadow-lg p-6 rounded-2xl border border-zinc-100 hover:border-[#10B981]/50 transition-colors">
+          <h3 class="text-xl font-bold text-zinc-900 mb-1">Reduced</h3>
+          <p class="text-xs font-bold text-[#10B981] uppercase tracking-wider">Urban Pollution</p>
+        </div>
+        <div class="bg-white/80 backdrop-blur-md shadow-lg p-6 rounded-2xl border border-zinc-100 hover:border-[#10B981]/50 transition-colors">
+          <h3 class="text-xl font-bold text-zinc-900 mb-1">100%</h3>
+          <p class="text-xs font-bold text-[#10B981] uppercase tracking-wider">Eco-Friendly Bikes</p>
+        </div>
+      </div>
+    </div>
+  </section> 
+
+  <!-- ==========================================
+       7. RIDER EXPERIENCE SECTION (PURE WHITE)
+       ========================================== -->
+  <section class="py-24 bg-white text-zinc-900">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-sm font-black text-[#10B981] uppercase tracking-widest">The Ultimate Flow</span>
+        <h2 class="text-4xl sm:text-5xl font-black tracking-tight text-zinc-900">Seamless Experience from Start to Finish</h2>
+        <p class="text-base text-zinc-500">Every service is designed to make urban travel simple, fast, and enjoyable for all types of riders.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="flex items-center gap-4 p-6 bg-white border border-zinc-200 shadow-sm rounded-2xl transition duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#10B981]/50 cursor-default">
+          <i class="bi bi-check-circle-fill text-[#10B981] text-2xl"></i>
+          <span class="text-sm font-bold text-zinc-900">Fast & Easy Scooter Access</span>
+        </div>
+        
+        <div class="flex items-center gap-4 p-6 bg-white border border-zinc-200 shadow-sm rounded-2xl transition duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#10B981]/50 cursor-default">
+          <i class="bi bi-check-circle-fill text-[#10B981] text-2xl"></i>
+          <span class="text-sm font-bold text-zinc-900">Affordable Ride Options</span>
+        </div>
+        
+        <div class="flex items-center gap-4 p-6 bg-white border border-zinc-200 shadow-sm rounded-2xl transition duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#10B981]/50 cursor-default">
+          <i class="bi bi-check-circle-fill text-[#10B981] text-2xl"></i>
+          <span class="text-sm font-bold text-zinc-900">Comfortable Riding Experience</span>
+        </div>
+        
+        <div class="flex items-center gap-4 p-6 bg-white border border-zinc-200 shadow-sm rounded-2xl transition duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#10B981]/50 cursor-default">
+          <i class="bi bi-check-circle-fill text-[#10B981] text-2xl"></i>
+          <span class="text-sm font-bold text-zinc-900">Modern App Integration</span>
+        </div>
+        
+        <div class="flex items-center gap-4 p-6 bg-white border border-zinc-200 shadow-sm rounded-2xl transition duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#10B981]/50 cursor-default">
+          <i class="bi bi-check-circle-fill text-[#10B981] text-2xl"></i>
+          <span class="text-sm font-bold text-zinc-900">Smart Payment Solutions</span>
+        </div>
+        
+        <div class="flex items-center gap-4 p-6 bg-white border border-zinc-200 shadow-sm rounded-2xl transition duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#10B981]/50 cursor-default">
+          <i class="bi bi-check-circle-fill text-[#10B981] text-2xl"></i>
+          <span class="text-sm font-bold text-zinc-900">Reliable Scooter Availability</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Target container slot element for footer inclusion -->
+  <div id="footer"></div>
+
+  <!-- Global JavaScript Configuration Engine -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>
