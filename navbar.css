@@ -86,7 +86,7 @@ button[type="submit"],
 
 /* ===== DARK MODE OVERRIDES ===== */
 [data-theme="dark"] #mainNavbar {
-  background-color: #111111 !important;
+  background-color: #292828 !important;
 }
 
 [data-theme="dark"] #mainNavbar a,

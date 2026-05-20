@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <li><a href="about.html" class="block py-2">About</a></li>
       <li><a href="service.html" class="block py-2">Services</a></li>
-       <li><a href="benefits.html" class="block py-2">Benefits</a></li>
+       <li><a href="blog.html" class="block py-2">Blog</a></li>
         <li><a href="gallery.html"class="block py-2">Gallery</a></li>
       <li><a href="contact.html" class="block py-2">Contact</a></li>
 

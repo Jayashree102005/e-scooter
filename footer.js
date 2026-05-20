@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div>
         <h1 class="text-2xl text-slate-900 font-bold tracking-tight">
           <a href="index.html">
-            ECO<span class="text-[#10B981] font-bold">GLIDE</span>
+            ECO<span class="title text-[#10B981] font-bold">GLIDE</span>
           </a>
         </h1>
         <p class="text-gray-500 text-sm leading-relaxed mt-2">

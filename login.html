@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoGlide | Login</title>
+  <link rel="icon" href="images/logo.jpeg">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
@@ -28,7 +29,7 @@
     <button onclick="toggleRTL()" class="theme-btn bg-white border border-zinc-200 p-3 rounded-xl shadow-sm hover:scale-105 transition"> <i class="bi bi-arrow-left-right"></i></button>
   </div>
 
-  <div class="auth-card bg-white p-8 md:p-12 rounded-[2.5rem] shadow-xl border border-zinc-100 w-full max-w-md">
+  <div class="auth-card bg-white p-6 sm:p-8 md:p-12 rounded-[2.5rem] shadow-xl border border-zinc-100 w-full max-w-md">
     
     <!-- Brand Name / Logo -->
     <div class="text-center mb-8">
@@ -50,12 +51,12 @@
         <i class="bi bi-eye-slash absolute end-4 top-1/2 -translate-y-1/2 cursor-pointer text-zinc-400" onclick="togglePass('pass')"></i>
       </div>
 
-      <div class="flex items-center justify-between text-sm">
-        <div class="flex items-center gap-2">
-          <input type="checkbox" id="remember" class="accent-[#10B981]">
-          <label for="remember" class="text-zinc-500">Remember me</label>
+      <div class="flex items-center justify-between text-xs sm:text-sm gap-2 flex-nowrap">
+        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          <input type="checkbox" id="remember" class="accent-[#10B981] shrink-0">
+          <label for="remember" class="text-zinc-500 select-none">Remember me</label>
         </div>
-        <a href="#" class="text-[#10B981] font-bold">Forgot?</a>
+        <a href="#" class="text-[#10B981] font-bold shrink-0">Forgot Password?</a>
       </div>
       
       <button class="w-full bg-[#10B981] text-white font-bold py-4 rounded-xl hover:bg-emerald-600 transition">Log In</button>
@@ -69,13 +70,18 @@
     </div>
 
     <div class="grid grid-cols-3 gap-4">
-      <button class="btn-social flex items-center justify-center gap-2 p-3 border rounded-xl hover:bg-zinc-50 transition font-semibold text-sm"><i class="bi bi-google text-red-500 text-lg lg:text-base"></i></button>
-      <button class="btn-social flex items-center justify-center gap-2 p-3 border rounded-xl hover:bg-zinc-50 transition font-semibold text-sm"><i class="bi bi-facebook text-blue-600 text-lg lg:text-base"></i></button>
-      <button class="btn-social flex items-center justify-center gap-2 p-3 border rounded-xl hover:bg-zinc-50 transition font-semibold text-sm"><i class="bi bi-apple text-lg lg:text-base"></i></button>
+      <button class="btn-social flex items-center justify-center gap-2 p-3 border rounded-xl hover:bg-zinc-50 transition font-semibold text-sm">
+        <i class="bi bi-google text-red-500 text-lg lg:text-base"></i> <span class="hidden lg:inline">Google</span>
+      </button>
+      <button class="btn-social flex items-center justify-center gap-2 p-3 border rounded-xl hover:bg-zinc-50 transition font-semibold text-sm">
+        <i class="bi bi-facebook text-blue-600 text-lg lg:text-base"></i> <span class="hidden lg:inline">Facebook</span>
+      </button>
+      <button class="btn-social flex items-center justify-center gap-2 p-3 border rounded-xl hover:bg-zinc-50 transition font-semibold text-sm">
+        <i class="bi bi-apple text-lg lg:text-base"></i> <span class="hidden lg:inline">Apple</span>
+      </button>
     </div>
-
     <div class="text-center mt-4 text-sm">
-      <p class="text-zinc-500">Don't have an account? <a href="signup.html" class="text-[#10B981] font-bold">Sign Up</a></p>
+      <p class="text-zinc-500">Don't have an account? <a href="sign.html" class="text-[#10B981] font-bold">Sign Up</a></p>
     </div>
   </div>
 

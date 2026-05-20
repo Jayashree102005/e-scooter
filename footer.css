@@ -1,8 +1,17 @@
-[data-theme="dark"] footer {
-  background-color: #111111 !important;
+[data-theme="dark"] footer,
+[data-theme="dark"] footer.bg-white,
+[data-theme="dark"] #footer footer {
+  background-color: #222222 !important;
 }
 
-[data-theme="dark"] footer .text-slate-900 {
+[data-theme="dark"] footer .border-t,
+[data-theme="dark"] footer.border-t,
+[data-theme="dark"] footer .border-gray-100 {
+  border-color: #333333 !important;
+}
+
+[data-theme="dark"] footer .text-slate-900,
+[data-theme="dark"] footer .title {
   color: #ffffff !important;
 }
 
