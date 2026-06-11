@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <li><a href="about.html" class="hover:text-[#10B981] transition">About</a></li>
         <li><a href="service.html" class="hover:text-[#10B981] transition">Services</a></li>
         <li><a href="blog.html" class="hover:text-[#10B981] transition">Blog</a></li>
-        <li><a href="gallery.html" class="hover:text-[#10B981] transition">Gallery</a></li>
+        <li><a href="gallery.html" class="hover:text-[#10B981] transition">Book My Ride</a></li>
         <li><a href="contact.html" class="hover:text-[#10B981] transition">Contact</a></li>
 
         <!-- Dashboard Dropdown -->
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <li><a href="about.html" class="block py-2">About</a></li>
       <li><a href="service.html" class="block py-2">Services</a></li>
        <li><a href="blog.html" class="block py-2">Blog</a></li>
-        <li><a href="gallery.html"class="block py-2">Gallery</a></li>
+        <li><a href="gallery.html"class="block py-2">Book My Ride</a></li>
       <li><a href="contact.html" class="block py-2">Contact</a></li>
 
       <!-- Dashboard -->

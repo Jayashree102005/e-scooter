@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </h3>
         <ul class="space-y-2 text-gray-500 text-sm">
           <li><a href="about.html" class="hover:text-[#10B981] transition">About Us</a></li>
-          <li><a href="gallery.html" class="hover:text-[#10B981] transition">Tour Gallery</a></li>
+          <li><a href="gallery.html" class="hover:text-[#10B981] transition">Book My Ride</a></li>
           <li><a href="blog.html" class="hover:text-[#10B981] transition">Rider Blog</a></li>
           <li><a href="contact.html" class="hover:text-[#10B981] transition">Contact Support</a></li>
         </ul>

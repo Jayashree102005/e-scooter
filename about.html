@@ -45,7 +45,7 @@
     [data-theme="dark"] .text-zinc-600,
     [data-theme="dark"] .text-zinc-500,
     [data-theme="dark"] .text-zinc-400 {
-      color: #a1a1aa !important;
+      color: #d4d4d8 !important;
     }
     
     [data-theme="dark"] .border-zinc-100:not(:hover),
@@ -86,44 +86,51 @@
   <!-- ==========================================
        1. HERO BANNER SECTION (PURE WHITE)
        ========================================== -->
-  <header class="relative bg-white pt-32 pb-24 overflow-hidden border-b border-zinc-100">
-    <!-- Vibrant glowing accent -->
-    <div class="absolute top-[10%] left-[50%] w-[500px] h-[500px] bg-[#10B981] opacity-5 rounded-full blur-[100px] transform -translate-x-1/2 animate-pulse"></div>
+  <header class="relative pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pb-24 overflow-hidden border-b border-zinc-100 flex items-center min-h-[500px] sm:min-h-[550px] lg:min-h-[600px]">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img class="w-full h-full object-cover" src="images/bike1.webp" alt="Urban Mobility">
+      <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/70"></div>
+    </div>
 
-    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-      <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#10B981]/10 text-[#10B981] text-xs font-bold rounded-full uppercase tracking-widest border border-[#10B981]/20 mb-8">
-        <i class="bi bi-rocket-takeoff-fill"></i> The Mobility Revolution
-      </span>
+    <div class="max-w-4xl mx-auto px-5 sm:px-6 relative z-10 text-center">
+    
       
-      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-zinc-900 tracking-tight leading-[1.1] max-w-4xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white tracking-tight leading-[1.1] mt-6">
         Redefining the Future of <span class="text-[#10B981]">Urban Mobility</span>
       </h1>
       
-      <p class="text-zinc-500 text-lg leading-relaxed max-w-2xl mx-auto mt-6 font-medium">
+      <p class="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto mt-5 font-medium">
         Experience smart, eco-friendly transportation with modern e-scooter rentals designed for commuters, travelers, and city explorers.
       </p>
-      
-      <p class="text-sm text-zinc-400 max-w-2xl mx-auto mt-4 leading-relaxed">
-        Our platform combines innovative technology, sustainable mobility, and seamless ride management to create a faster, cleaner, and more enjoyable way to move around the city.
-      </p>
+    
 
-      <!-- Quick Highlights Linear Matrix -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-16 border-t border-zinc-100 pt-10 text-center">
-        <div class="flex flex-col items-center gap-3 group cursor-default">
-          <div class="w-14 h-14 rounded-full border border-zinc-200 bg-white shadow-sm flex items-center justify-center text-[#10B981] group-hover:bg-[#10B981] group-hover:text-white transition-all duration-300 transform group-hover:-translate-y-1"><i class="bi bi-qr-code-scan text-2xl"></i></div>
-          <h4 class="text-sm font-bold text-zinc-900 text-center">Smart QR Unlock</h4>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 justify-center">
+        <a href="contact.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#10B981] hover:bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-500/20 transition-all duration-300 transform hover:-translate-y-1 text-sm sm:text-base">
+          Start Riding <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="service.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/40 font-bold rounded-xl backdrop-blur-sm transition-all duration-300 transform hover:-translate-y-1 text-sm sm:text-base">
+          Explore Services
+        </a>
+      </div>
+
+      <!-- Quick Highlights Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-12 lg:mt-16 border-t border-white/10 pt-6 sm:pt-8 lg:pt-10">
+        <div class="flex flex-col items-center gap-2 sm:gap-3 group cursor-default">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm flex items-center justify-center text-[#10B981] group-hover:bg-[#10B981] group-hover:text-white group-hover:border-[#10B981] transition-all duration-300 transform group-hover:-translate-y-1"><i class="bi bi-qr-code-scan text-xl sm:text-2xl"></i></div>
+          <h4 class="text-xs sm:text-sm font-bold text-white/80 text-center">Smart QR Unlock</h4>
         </div>
-        <div class="flex flex-col items-center gap-3 group cursor-default">
-          <div class="w-14 h-14 rounded-full border border-zinc-200 bg-white shadow-sm flex items-center justify-center text-[#10B981] group-hover:bg-[#10B981] group-hover:text-white transition-all duration-300 transform group-hover:-translate-y-1"><i class="bi bi-tree-fill text-2xl"></i></div>
-          <h4 class="text-sm font-bold text-zinc-900 text-center">Eco-Friendly Scooters</h4>
+        <div class="flex flex-col items-center gap-2 sm:gap-3 group cursor-default">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm flex items-center justify-center text-[#10B981] group-hover:bg-[#10B981] group-hover:text-white group-hover:border-[#10B981] transition-all duration-300 transform group-hover:-translate-y-1"><i class="bi bi-tree-fill text-xl sm:text-2xl"></i></div>
+          <h4 class="text-xs sm:text-sm font-bold text-white/80 text-center">Eco-Friendly Scooters</h4>
         </div>
-        <div class="flex flex-col items-center gap-3 group cursor-default">
-          <div class="w-14 h-14 rounded-full border border-zinc-200 bg-white shadow-sm flex items-center justify-center text-[#10B981] group-hover:bg-[#10B981] group-hover:text-white transition-all duration-300 transform group-hover:-translate-y-1"><i class="bi bi-geo-alt-fill text-2xl"></i></div>
-          <h4 class="text-sm font-bold text-zinc-900 text-center">Real-Time Tracking</h4>
+        <div class="flex flex-col items-center gap-2 sm:gap-3 group cursor-default">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm flex items-center justify-center text-[#10B981] group-hover:bg-[#10B981] group-hover:text-white group-hover:border-[#10B981] transition-all duration-300 transform group-hover:-translate-y-1"><i class="bi bi-geo-alt-fill text-xl sm:text-2xl"></i></div>
+          <h4 class="text-xs sm:text-sm font-bold text-white/80 text-center">Real-Time Tracking</h4>
         </div>
-        <div class="flex flex-col items-center gap-3 group cursor-default">
-          <div class="w-14 h-14 rounded-full border border-zinc-200 bg-white shadow-sm flex items-center justify-center text-[#10B981] group-hover:bg-[#10B981] group-hover:text-white transition-all duration-300 transform group-hover:-translate-y-1"><i class="bi bi-wallet-fill text-2xl"></i></div>
-          <h4 class="text-sm font-bold text-zinc-900 text-center">Secure Payments</h4>
+        <div class="flex flex-col items-center gap-2 sm:gap-3 group cursor-default">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm flex items-center justify-center text-[#10B981] group-hover:bg-[#10B981] group-hover:text-white group-hover:border-[#10B981] transition-all duration-300 transform group-hover:-translate-y-1"><i class="bi bi-wallet-fill text-xl sm:text-2xl"></i></div>
+          <h4 class="text-xs sm:text-sm font-bold text-white/80 text-center">Secure Payments</h4>
         </div>
       </div>
     </div>
@@ -139,7 +146,7 @@
         <!-- Left Graphic: Modern E-Scooter/City Image -->
         <div class="relative group cursor-pointer">
           <div class="rounded-[2rem] overflow-hidden relative shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-transform duration-700 hover:scale-[1.02] border border-zinc-100">
-            <img class="w-full h-[550px] object-cover transition-transform duration-700 group-hover:scale-110" src="images/bike6.png" alt="Modern City Travel">
+            <img class="w-full h-[550px] object-cover transition-transform duration-700 group-hover:scale-110" src="images/bike9.jpg" alt="Urban Scooter Rental">
           </div>
           <!-- Floating Badge -->
           <div class="absolute -bottom-6 -right-6 lg:-right-10 bg-[#10B981] text-white p-6 rounded-2xl shadow-xl border-4 border-white transform transition-transform duration-500 group-hover:-translate-y-2">
@@ -204,28 +211,48 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        <div class="p-8 bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
-          <div class="w-16 h-16 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-3xl font-bold mb-6 transition-transform duration-300 group-hover:rotate-12 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-bicycle"></i></div>
-          <h3 class="font-bold text-2xl mb-3 text-zinc-900">Daily Ride Rentals</h3>
-          <p class="text-sm text-zinc-500 leading-relaxed">Flexible scooter rentals designed for short commutes and everyday travel operations effortlessly managed from your device.</p>
+        <div class="relative p-8 bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer overflow-hidden">
+          <div class="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+            <img class="w-full h-full object-cover" src="images/bike5.jpeg" alt="">
+          </div>
+          <div class="relative z-10">
+            <div class="w-16 h-16 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-3xl font-bold mb-6 transition-transform duration-300 group-hover:rotate-12 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-bicycle"></i></div>
+            <h3 class="font-bold text-2xl mb-3 text-zinc-900">Daily Ride Rentals</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">Flexible scooter rentals designed for short commutes and everyday travel operations effortlessly managed from your device.</p>
+          </div>
         </div>
 
-        <div class="p-8 bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
-          <div class="w-16 h-16 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-3xl font-bold mb-6 transition-transform duration-300 group-hover:rotate-12 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-compass"></i></div>
-          <h3 class="font-bold text-2xl mb-3 text-zinc-900">Guided City Tours</h3>
-          <p class="text-sm text-zinc-500 leading-relaxed">Curated ride experiences that help users explore attractions, food streets, and scenic routes with built-in navigation.</p>
+        <div class="relative p-8 bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer overflow-hidden">
+          <div class="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+            <img class="w-full h-full object-cover" src="images/img4.jpg" alt="">
+          </div>
+          <div class="relative z-10">
+            <div class="w-16 h-16 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-3xl font-bold mb-6 transition-transform duration-300 group-hover:rotate-12 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-compass"></i></div>
+            <h3 class="font-bold text-2xl mb-3 text-zinc-900">Guided City Tours</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">Curated ride experiences that help users explore attractions, food streets, and scenic routes with built-in navigation.</p>
+          </div>
         </div>
 
-        <div class="p-8 bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
-          <div class="w-16 h-16 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-3xl font-bold mb-6 transition-transform duration-300 group-hover:rotate-12 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-window-sidebar"></i></div>
-          <h3 class="font-bold text-2xl mb-3 text-zinc-900">Smart Rider Dashboard</h3>
-          <p class="text-sm text-zinc-500 leading-relaxed">A fully connected web dashboard for unlocking scooters, managing live rides, checking battery levels, and tracking trips.</p>
+        <div class="relative p-8 bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer overflow-hidden">
+          <div class="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+            <img class="w-full h-full object-cover" src="images/imgs2.webp" alt="">
+          </div>
+          <div class="relative z-10">
+            <div class="w-16 h-16 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-3xl font-bold mb-6 transition-transform duration-300 group-hover:rotate-12 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-window-sidebar"></i></div>
+            <h3 class="font-bold text-2xl mb-3 text-zinc-900">Smart Rider Dashboard</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">A fully connected web dashboard for unlocking scooters, managing live rides, checking battery levels, and tracking trips.</p>
+          </div>
         </div>
 
-        <div class="p-8 bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer">
-          <div class="w-16 h-16 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-3xl font-bold mb-6 transition-transform duration-300 group-hover:rotate-12 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-credit-card-fill"></i></div>
-          <h3 class="font-bold text-2xl mb-3 text-zinc-900">Cashless Payment System</h3>
-          <p class="text-sm text-zinc-500 leading-relaxed">Fast and secure digital wallet integration for seamless transactions, auto-reloads, and ride financial management.</p>
+        <div class="relative p-8 bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-pointer overflow-hidden">
+          <div class="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+            <img class="w-full h-full object-cover" src="images/imgs4.png" alt="">
+          </div>
+          <div class="relative z-10">
+            <div class="w-16 h-16 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-3xl font-bold mb-6 transition-transform duration-300 group-hover:rotate-12 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-credit-card-fill"></i></div>
+            <h3 class="font-bold text-2xl mb-3 text-zinc-900">Cashless Payment System</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">Fast and secure digital wallet integration for seamless transactions, auto-reloads, and ride financial management.</p>
+          </div>
         </div>
 
       </div>

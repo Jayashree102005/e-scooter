@@ -45,7 +45,7 @@
     [data-theme="dark"] .text-zinc-600,
     [data-theme="dark"] .text-zinc-500,
     [data-theme="dark"] .text-zinc-400 {
-      color: #a1a1aa !important;
+      color: #d4d4d8 !important;
     }
     
     [data-theme="dark"] .border-zinc-100:not(:hover),
@@ -355,8 +355,13 @@
   <!-- ==========================================
        5. SAFETY & SUPPORT SERVICES (PURE WHITE)
        ========================================== -->
-  <section class="py-24 bg-white text-zinc-900 border-b border-zinc-100">
-    <div class="max-w-7xl mx-auto px-6">
+  <section class="py-24 bg-white text-zinc-900 border-b border-zinc-100 relative overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img class="w-full h-full object-cover opacity-10" src="images/bike1.webp" alt="Safety and Protection">
+      <div class="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-white"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
       
       <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
         <span class="text-sm font-black text-[#10B981] uppercase tracking-widest">Ultimate Protection</span>
@@ -366,41 +371,71 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <div class="bg-white rounded-[2rem] border border-zinc-200 p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] hover:border-[#10B981]/30 transition-all duration-300 transform hover:-translate-y-2 group cursor-default">
-          <div class="w-14 h-14 bg-white border border-zinc-100 shadow-sm text-[#10B981] rounded-full flex items-center justify-center text-2xl mb-6 transition-transform duration-300 group-hover:scale-110"><i class="bi bi-map"></i></div>
-          <h3 class="font-bold text-xl mb-2 text-zinc-900">Geo-Fenced Ride Zones</h3>
-          <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+        <div class="bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-default flex flex-col">
+          <div class="h-48 w-full overflow-hidden relative">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/imgs6.jpg" alt="Geo-Fenced Ride Zones">
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="w-12 h-12 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl font-bold mb-4 transition-transform duration-300 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-map"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-zinc-900">Geo-Fenced Ride Zones</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+          </div>
         </div>
 
-        <div class="bg-white rounded-[2rem] border border-zinc-200 p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] hover:border-[#10B981]/30 transition-all duration-300 transform hover:-translate-y-2 group cursor-default">
-          <div class="w-14 h-14 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-2xl mb-6 transition-transform duration-300 group-hover:scale-110"><i class="bi bi-exclamation-triangle"></i></div>
-          <h3 class="font-bold text-xl mb-2 text-zinc-900">Emergency Assistances</h3>
-          <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+        <div class="bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-default flex flex-col">
+          <div class="h-48 w-full overflow-hidden relative">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/imgs7.jpg" alt="Emergency Assistances">
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="w-12 h-12 rounded-full bg-red-50 text-red-500 flex items-center justify-center text-xl font-bold mb-4 transition-transform duration-300 group-hover:bg-red-500 group-hover:text-white"><i class="bi bi-exclamation-triangle"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-zinc-900">Emergency Assistances</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+          </div>
         </div>
 
-        <div class="bg-white rounded-[2rem] border border-zinc-200 p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] hover:border-[#10B981]/30 transition-all duration-300 transform hover:-translate-y-2 group cursor-default">
-          <div class="w-14 h-14 bg-white border border-zinc-100 shadow-sm text-[#10B981] rounded-full flex items-center justify-center text-2xl mb-6 transition-transform duration-300 group-hover:scale-110"><i class="bi bi-p-square"></i></div>
-          <h3 class="font-bold text-xl mb-2 text-zinc-900">Smart Parking Validation</h3>
-          <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+        <div class="bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-default flex flex-col">
+          <div class="h-48 w-full overflow-hidden relative">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/imgs8.jpg" alt="Smart Parking Validation">
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="w-12 h-12 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl font-bold mb-4 transition-transform duration-300 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-p-square"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-zinc-900">Smart Parking Validation</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+          </div>
         </div>
 
-        <div class="bg-white rounded-[2rem] border border-zinc-200 p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] hover:border-[#10B981]/30 transition-all duration-300 transform hover:-translate-y-2 group cursor-default">
-          <div class="w-14 h-14 bg-white border border-zinc-100 shadow-sm text-[#10B981] rounded-full flex items-center justify-center text-2xl mb-6 transition-transform duration-300 group-hover:scale-110"><i class="bi bi-activity"></i></div>
-          <h3 class="font-bold text-xl mb-2 text-zinc-900">Ride & riders Monitoring</h3>
-          <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+        <div class="bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-default flex flex-col">
+          <div class="h-48 w-full overflow-hidden relative">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/bike5.jpeg" alt="Ride & riders Monitoring">
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="w-12 h-12 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl font-bold mb-4 transition-transform duration-300 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-activity"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-zinc-900">Ride & riders Monitoring</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+          </div>
         </div>
 
-        <div class="bg-white rounded-[2rem] border border-zinc-200 p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgba(16,185,129,0.15)] hover:border-[#10B981]/30 transition-all duration-300 transform hover:-translate-y-2 group cursor-default">
-          <div class="w-14 h-14 bg-white border border-zinc-100 shadow-sm text-[#10B981] rounded-full flex items-center justify-center text-2xl mb-6 transition-transform duration-300 group-hover:scale-110"><i class="bi bi-heart-pulse"></i></div>
-          <h3 class="font-bold text-xl mb-2 text-zinc-900">Scooter Health Tracking</h3>
-          <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+        <div class="bg-white border border-zinc-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[2rem] overflow-hidden transition-all duration-300 transform hover:-translate-y-3 hover:border-[#10B981] hover:shadow-[0_15px_40px_rgba(16,185,129,0.15)] group cursor-default flex flex-col">
+          <div class="h-48 w-full overflow-hidden relative">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/bike1.webp" alt="Scooter Health Tracking">
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="w-12 h-12 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-xl font-bold mb-4 transition-transform duration-300 group-hover:bg-[#10B981] group-hover:text-white"><i class="bi bi-heart-pulse"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-zinc-900">Scooter Health Tracking</h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">Integrated boundaries to ensure compliance with local riding maps.</p>
+          </div>
         </div>
 
         <!-- Dedicated Support Highlight -->
-        <div class="bg-[#10B981] rounded-[2rem] p-8 shadow-xl text-white transform hover:-translate-y-2 transition-all duration-300 group cursor-default">
-          <div class="w-14 h-14 bg-white text-[#10B981] rounded-full flex items-center justify-center text-2xl mb-6 transition-transform duration-300 group-hover:scale-110"><i class="bi bi-headset"></i></div>
-          <h3 class="font-bold text-xl mb-2">Customer care Support</h3>
-          <p class="text-sm font-medium leading-relaxed mb-6 text-white/90">Dedicated 24/7 assistance for riding issues  support directly through  app.</p>
+        <div class="bg-[#10B981] rounded-[2rem] overflow-hidden shadow-xl text-white transform hover:-translate-y-2 transition-all duration-300 group cursor-default flex flex-col">
+          <div class="h-48 w-full overflow-hidden relative">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="images/imgs9.jpg" alt="Customer care Support">
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="w-12 h-12 rounded-full bg-white text-[#10B981] flex items-center justify-center text-xl font-bold mb-4 transition-transform duration-300 group-hover:scale-110"><i class="bi bi-headset"></i></div>
+            <h3 class="font-bold text-xl mb-2">Customer care Support</h3>
+            <p class="text-sm font-medium leading-relaxed mb-6 text-white/90">Dedicated 24/7 assistance for riding issues  support directly through  app.</p>
+          </div>
         </div>
 
       </div>
