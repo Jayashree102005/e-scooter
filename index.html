@@ -55,15 +55,6 @@
       background-color: #10B981 !important;
     }
 
-    [data-theme="dark"] a.bg-white {
-      background-color: #111111 !important;
-      border-color: #333333 !important;
-    }
-
-    [data-theme="dark"] a.bg-white:hover {
-      background-color: #222222 !important;
-    }
-
     [data-theme="dark"] .hover\:bg-slate-50:hover {
       background-color: #1e293b !important;
     }
@@ -73,26 +64,78 @@
       color: #000000 !important;
     }
 
-    [data-theme="dark"] body,
-    [data-theme="dark"] p,
+    /* ── Dark mode text contrast hierarchy ── */
     [data-theme="dark"] h1,
     [data-theme="dark"] h2,
     [data-theme="dark"] h3,
     [data-theme="dark"] h4,
     [data-theme="dark"] h5,
-    [data-theme="dark"] h6,
-    [data-theme="dark"] span,
+    [data-theme="dark"] h6 {
+      color: #ffffff !important;
+    }
+
+    [data-theme="dark"] body,
+    [data-theme="dark"] p,
     [data-theme="dark"] li,
-    [data-theme="dark"] a,
-    [data-theme="dark"] i,
     [data-theme="dark"] label,
-    [data-theme="dark"] table,
     [data-theme="dark"] th,
     [data-theme="dark"] td,
-    [data-theme="dark"] div,
-    [data-theme="dark"] small,
-    [data-theme="dark"] strong {
+    [data-theme="dark"] div:not([class*="text-"]) {
+      color: #e2e8f0 !important;
+    }
+
+    [data-theme="dark"] .text-gray-500,
+    [data-theme="dark"] .text-gray-600,
+    [data-theme="dark"] .text-gray-400,
+    [data-theme="dark"] .text-slate-400,
+    [data-theme="dark"] .text-slate-500,
+    [data-theme="dark"] .text-zinc-400,
+    [data-theme="dark"] .text-zinc-500,
+    [data-theme="dark"] .text-zinc-600 {
+      color: #94a3b8 !important;
+    }
+
+    [data-theme="dark"] .text-slate-900,
+    [data-theme="dark"] .text-slate-800,
+    [data-theme="dark"] .text-slate-700 {
       color: #ffffff !important;
+    }
+
+    [data-theme="dark"] .text-slate-300 {
+      color: #cbd5e1 !important;
+    }
+
+    [data-theme="dark"] small,
+    [data-theme="dark"] .text-xs {
+      color: #94a3b8 !important;
+    }
+
+    /* ── Dark mode backgrounds ── */
+    [data-theme="dark"] .bg-white {
+      background-color: #000000 !important;
+    }
+
+    [data-theme="dark"] .bg-gray-50,
+    [data-theme="dark"] .bg-neutral-50 {
+      background-color: #0a0a0a !important;
+    }
+
+    [data-theme="dark"] .card.bg-white,
+    [data-theme="dark"] a.bg-white {
+      background-color: #111111 !important;
+      border-color: #1e293b !important;
+    }
+
+    [data-theme="dark"] a.bg-white:hover {
+      background-color: #1a1a1a !important;
+    }
+
+    /* ── Dark mode borders ── */
+    [data-theme="dark"] .border-gray-100,
+    [data-theme="dark"] .border-gray-200,
+    [data-theme="dark"] .border-zinc-100,
+    [data-theme="dark"] .border-zinc-200 {
+      border-color: #1e293b !important;
     }
 
     [data-theme="dark"] thead {
@@ -106,6 +149,12 @@
     [data-theme="dark"] .tag-btn {
       background-color: rgba(255, 255, 255, 0.1) !important;
       border-color: #ffffff !important;
+    }
+
+    /* ── Dark mode card/text overrides for specific sections ── */
+    [data-theme="dark"] .card.bg-gray-50 {
+      background-color: #111111 !important;
+      border-color: #1e293b !important;
     }
   </style>
   <script>
